@@ -1,0 +1,404 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script src="SpryAssets/SpryCollapsiblePanel.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+var slideimages = new Array() // create new array to preload images
+slideimages[0] = new Image() // create new instance of image object
+slideimages[0].src = "images/britle.jpg" // set image src property to image path, preloading image in the process
+slideimages[1] = new Image()
+slideimages[1].src = "images/britlestar.jpg"
+slideimages[2] = new Image()
+slideimages[2].src = "images/tridaknanot-in-focus.jpg"
+slideimages[3] = new Image()
+slideimages[3].src = "images/clounfish2.jpg"
+slideimages[4] = new Image()
+slideimages[4].src = "images/coral bahamas.jpg"
+slideimages[5] = new Image()
+slideimages[5].src = "images/IMG_1351.jpg"
+slideimages[6] = new Image()
+slideimages[6].src = "images/IMG_1381.jpg"
+slideimages[7] = new Image()
+slideimages[7].src = "images/trigon.jpg"
+slideimages[8] = new Image()
+slideimages[8].src = "images/IMG_1707a.jpg"
+
+
+
+
+
+
+
+//coral bahamas.jpg / conus.jpg /  turbinaria_closeup.jpg / trigon.jpg / spirobrunchus2.jpg
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+body {
+	background: #42413C;
+	margin: 0;
+	padding: 0;
+	color: #000;
+	font-family: Tahoma;
+	font-size: 100%;
+	line-height: 1.4;
+}
+
+/* ~~ Element/tag selectors ~~ */
+ul, ol, dl { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* removing the top margin gets around an issue where margins can escape from their containing div. The remaining bottom margin will hold it away from any elements that follow. */
+	padding-right: 15px;
+	padding-left: 15px; /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
+	background-color: #FFF;
+	font-size: 10px;
+	font-weight: lighter;
+}
+a img { /* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
+	border: none;
+}
+
+/* ~~ Styling for your site's links must remain in this order - including the group of selectors that create the hover effect. ~~ */
+a:link {
+	color: #06F;
+	text-decoration: underline; /* unless you style your links to look extremely unique, it's best to provide underlines for quick visual identification */
+}
+a:visited {
+	color: #09F;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* this group of selectors will give a keyboard navigator the same hover experience as the person using a mouse. */
+	text-decoration: none;
+	color: #06F;
+}
+
+/* ~~this fixed width container surrounds the other divs~~ */
+.container {
+	width: 960px;
+	background: #FFF;
+	margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout */
+}
+
+/* ~~ the header is not given a width. It will extend the full width of your layout. It contains an image placeholder that should be replaced with your own linked logo ~~ */
+.header {
+	background: #FFFFFF;
+}
+
+/* ~~ These are the columns for the layout. ~~ 
+
+1) Padding is only placed on the top and/or bottom of the divs. The elements within these divs have padding on their sides. This saves you from any "box model math". Keep in mind, if you add any side padding or border to the div itself, it will be added to the width you define to create the *total* width. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design.
+
+2) No margin has been given to the columns since they are all floated. If you must add margin, avoid placing it on the side you're floating toward (for example: a right margin on a div set to float right). Many times, padding can be used instead. For divs where this rule must be broken, you should add a "display:inline" declaration to the div's rule to tame a bug where some versions of Internet Explorer double the margin.
+
+3) Since classes can be used multiple times in a document (and an element can also have multiple classes applied), the columns have been assigned class names instead of IDs. For example, two sidebar divs could be stacked if necessary. These can very easily be changed to IDs if that's your preference, as long as you'll only be using them once per document.
+
+4) If you prefer your nav on the right instead of the left, simply float these columns the opposite direction (all right instead of all left) and they'll render in reverse order. There's no need to move the divs around in the HTML source.
+
+*/
+.sidebar1 {
+	float: left;
+	width: 180px;
+	background: #FFFFFF;
+	padding-bottom: 10px;
+}
+.upperbar {
+	float: up;
+	background: #FFFFFF;
+	padding-bottom: 10px;
+}
+.content {
+	padding: 10px 0;
+	width: 780px;
+	float: left;
+	color: #000;
+	font-family: Tahoma;
+	letter-spacing: normal;
+	line-height: 2;
+	font: tahoma;
+}
+
+/* ~~ This grouped selector gives the lists in the .content area space ~~ */
+.content ul, .content ol { 
+	padding: 0 15px 15px 40px; /* this padding mirrors the right padding in the headings and paragraph rule above. Padding was placed on the bottom for space between other elements on the lists and on the left to create the indention. These may be adjusted as you wish. */
+}
+
+/* ~~ The navigation list styles (can be removed if you choose to use a premade flyout menu like Spry) ~~ */
+ul.nav {
+	list-style: none; /* this removes the list marker */
+	border-top: 1px solid #ffffff; /* this creates the top border for the links - all others are placed using a bottom border on the LI */
+	margin-bottom: 15px;
+	font-size: 10px;
+}
+ul.nav li {
+	border-bottom: 1px solid #ffffff; /* this creates the button separation */
+    }
+
+ul.nav a, ul.nav a:visited { /* grouping these selectors makes sure that your links retain their button look even after being visited */
+	padding: 5px 5px 5px 15px;
+	display: block; /* this gives the link block properties causing it to fill the whole LI containing it. This causes the entire area to react to a mouse click. */
+	width: 160px;  /*this width makes the entire button clickable for IE6. If you don't need to support IE6, it can be removed. Calculate the proper width by subtracting the padding on this link from the width of your sidebar container. */
+	text-decoration: none;
+	background: #FFFFFF;
+}
+ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background and text color for both mouse and keyboard navigators */
+	background: #ADB96E;
+	color: #FFF;
+}
+
+/* ~~ The footer ~~ */
+.footer {
+	padding: 10px 0;
+	background: #FFFFFF;
+	position: relative;/* this gives IE6 hasLayout to properly clear */
+	clear: both; /* this clear property forces the .container to understand where the columns end and contain them */
+}
+
+/* ~~ miscellaneous float/clear classes ~~ */
+.fltrt {  /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* this class can be used to float an element left in your page. The floated element must precede the element it should be next to on the page. */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* this class can be placed on a <br /> or empty div as the final element following the last floated div (within the #container) if the #footer is removed or taken out of the #container */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+.container .content h3 span font strong {
+	font-weight: bold;
+}
+ li { 
+display: inline; 
+padding: 20px; 
+}
+.main {
+	font-size: 10px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #000;
+	
+}
+.container .content h5 {
+	font-family: Tahoma;
+	font-size: 10px;
+	font-style: normal;
+}
+-->
+</style>
+<link href="SpryAssets/SpryCollapsiblePanel.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<div class="container">
+  <div class="header"><a href="#"><img src="images/hedder1.jpg" alt="Insert Logo Here" name="Insert_logo" width="960" height="45" id="Insert_logo" style="background: #C6D580; display:block; background-color: #FFFFFF; text-align: center;" /></a> 
+    <!-- end .header --></div>
+  <div class="sidebar1">
+    <ul class="nav">
+    
+        
+    
+      <li><a href="aboutus.html">About us</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="graduates.html">Graduate students</a></li>
+      <li><a href="diving.html">Diving</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="donate.html">Donate</a></li>
+      <li><a href="contactus.html">Contact us</a></li>
+    </ul>
+    <p><!-- end .sidebar1 --><img src="images/britle.jpg" name="slide" width=102 height=65 id="slide" /></p>
+    <script type="text/javascript">
+
+//variable that will increment through the images
+var step=0
+
+function slideit(){
+ //if browser does not support the image object, exit.
+ if (!document.images)
+  return
+ document.getElementById('slide').src = slideimages[step].src
+ if (step<8)
+  step++
+ else
+  step=0
+ //call function "slideit()" every 2.5 seconds
+ setTimeout("slideit()",2500)
+}
+
+slideit()
+
+</script>
+  </div>
+  <div class="content">
+    <p><span style="text-align: center;"><font style="color: rgb(17, 40, 64); font-family: Verdana; font-size: 12pt; font-style: normal; font-variant: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px;"><strong> &nbsp; </span></p>
+ <div class="main">   
+    <p align="left">The Deep Med Research Group (Established 2009)<br />
+      <br />
+      Marine Biology in the Eastern Mediterranean<br />
+      <br />
+      Head of the DEEPMED: Dr.<a href="http://deepmed.haifa.ac.il/Dan_Tchernov.htm" name="#Dan Tchernov" title="Dan Tchernov" id="#Dan Tchernov" >Dan Tchernov <br />
+        <br />
+      </a>Lab manager:<a href="http://deepmed.haifa.ac.il/Dan_Tchernov.htm" name="#Dan Tchernov" title="Dan Tchernov" > Dr.<span class="Apple-converted-space">&nbsp;</span><a href="http://deepmed.haifa.ac.il/Eli.htm" name="#Eli Shemesh" title="Eli Shemesh" id="#Eli Shemesh" style="text-decoration: underline; color: purple;">Eli Shemesh<span class="Apple-converted-space">&nbsp;</span></a></p>
+</div>
+    <h5>Main Topics</h5>
+<h5> Physiology of Photosynthesis Ecology and biodivesity of the deep Levantine basin Deep benthos microbiology and biogeochemistry Masophotic reefs  Global change - ocean acidification and coral bleaching Paleobiology </h5>
+    <div style="margin-left: 40px; text-align: left; margin-right: 0px; width: auto;">&nbsp;
+      <div id="CollapsiblePanel1" class="CollapsiblePanel">
+        <div class="CollapsiblePanelTab" tabindex="0"><strong>Coral  Bleaching</strong></div>
+        <div class="CollapsiblePanelContent">
+          <p align="justify" class="main">The threat of coral bleaching on  a global scale is a growing concern both because of the reduction in essential</p>
+          <p align="justify" class="main"> ecological services provided by zooxanthellae (symbiotic algae) containing  corals within reef communities,</p>
+          <p align="justify" class="main"> and the potentially devastating economic  impacts of their demise. Coral bleaching is the largest natural cause</p>
+          <p align="justify" class="main"> of coral death. During the  1997-1998 El Niño-Southern Oscillation (ENSO), 16% of the world's coral reefs  died. <br />
+            <br />
+            My current research aims to  unravel the causes of the physiological  causation of coral bleaching and the</p>
+          <p align="justify" class="main"> evolutionary and ecological impact of  these processes on corals and reefs respectively.  We have revealed</p>
+          <p align="justify" class="main"> (Tchernov et al. 2004) that the resilient clones of zooxanthellae show a genetically encoded  adaptation to higher</p>
+          <p align="justify" class="main"> temperatures, resulting from changes in the lipid  composition in the thylakoids that confer resistance to elevated</p>
+          <p align="justify" class="main"> temperature  stress. </p>
+          <p align="justify" class="main">In addition, we are currently studying the  response of coral tissue under thermal stress, and have found that the</p>
+          <p align="justify" class="main"> coral goes  through programmed cell death (PCD). Interestingly, some corals, which proved  to be resilient to therma</p>
+          <p align="justify" class="main">l stress, are capable of biochemically inhibiting PCD  (publication pending).  </p>
+          <p align="justify" class="main">The coevolution (if indeed a reciprocal  evolutionary change in interacting species has occurred) of scleractinian</p>
+          <p align="justify" class="main"> corals and zooxanthellae started as early as the Norian period (A sub-division of the late  Triassic period,</p>
+          <p align="justify" class="main"> from 220.7 to 209.6 Ma.), however, very little is known about  the evolutionary mechanism that led to the formation</p>
+          <p align="justify" class="main"> of this symbiosis and to the  conditions that maintained it for such a long period.  This leads to major questions,</p>
+          <p align="justify" class="main"> such as 1) Perhaps  coral bleaching is just a selective mechanism that is an integral part of  algae-coral coevolution?</p>
+          <p align="justify" class="main"> And 2) On the other hand, coral bleaching might be a  consequence of the latest climatic changes brought about by</p>
+          <p align="justify" class="main"> anthropogenic  activity?</p>
+          <p align="justify" class="main">I am currently developing a new paleo-proxy that could  shed light on past bleaching events, through the detection</p>
+          <p align="justify" class="main"> of Boron 11 isotopes  in the coral skeleton. This paleo-proxy coupled with Sr/Ca ratios and 14C or</p>
+          <p align="justify" class="main"> 230Th-234U-238U  isotopic compositions may indicate the time, temperature, and severity of such </p>
+          <p align="justify" class="main">events in the past. Such a proxy will create a new way to validate or dismiss  any of the current hypotheses.</p>
+          <p align="justify" class="main"> Moreover, it would be possible to determine if  during the last 150 years, the frequency of bleaching events is </p>
+          <p align="justify" class="main">increasing, and  what the occurrence rate of bleaching was during previous interglacial  periods.   In addition to</p>
+          <p align="justify" class="main"> bleaching, we  are experiencing an acidification effect that is derived from the increased CO2  concentration in</p>
+          <p align="justify" class="main"> the atmosphere over the past 150 years.</p>
+        </div>
+      </div>
+      <p align="justify" class="main">&nbsp;</p>
+      <div id="CollapsiblePanel2" class="CollapsiblePanel">
+        <div class="CollapsiblePanelTab" tabindex="0"><strong>Ocean Acidification and  its affect on Corals and Phytoplankton</strong></div>
+        <div class="CollapsiblePanelContent">
+          <p align="justify" class="main">In addition to bleaching, we are experiencing an  acidification effect that is derived from the increased CO2</p>
+          <p align="justify" class="main"> concentration in the atmosphere over the past 150 years.  It is important to understand how this  phenomenon is</p>
+          <p align="justify" class="main"> affecting the inhabitants of the marine realm.  In our current research (Fine and Tchernov  2007), we have</p>
+          <p align="justify" class="main"> discovered that corals can withstand low pH values (7.2-7.4  versus modern value 8.2).  The corals  lose their</p>
+          <p align="justify" class="main"> aragonite skeleton which disassociated while their polyp biomass  increased fivefold.  Moreover, the coral  lost its</p>
+          <p align="justify" class="main"> colonial structure and separated into a multitude of single  polyps.  These polyps maintained their  reproductive ability.  </p>
+          <p align="justify" class="main">This find has vast implications on our understanding  of coral evolution in light of the fact that marine pH has shifted</p>
+          <p align="justify" class="main"> dramatically  during the earth's history.  There are  two major 'reef gaps'- a period in the geological record which is</p>
+          <p align="justify" class="main"> absent of  coral fossils. One occurred during the Permian-Triassic mass extinction event  (251 million years ago) and</p>
+          <p align="justify" class="main"> another occurred during the Triassic-Jurassic  boundary extinction event (206 million years ago).  The lack of</p>
+          <p align="justify" class="main"> fossilized coral in the  geological record during those periods can now be better understood.  Interestingly,</p>
+          <p align="justify" class="main"> molecular clocking has  produced a phylogenetic tree that dates the origin of scleractinian corals at  280 million</p>
+          <p align="justify" class="main"> years ago, yet there is no such marker in the geological  record.  Again, our findings provide an  explanation for</p>
+          <p align="justify" class="main"> this incongruency. </p>
+          <p align="justify" class="main">I am currently expanding  this research to a multitude of species and testing both their physiological  and biochemical</p>
+          <p align="justify" class="main"> reactions to acidification in an attempt to elucidate the  mechanisms behind those very dramatic responses. </p>
+          <p align="justify" class="main">In addition, we have found  that the colony separation into individual polyps is executed through apoptotic  pathways.</p>
+          <p align="justify" class="main">  This finding is linked to the  apoptotic response that we have discovered is heat-stress related and causes,</p>
+          <p align="justify" class="main"> in many cases, the annihilation of the whole colony.   Therefore, these studies are providing a  broader view of the</p>
+          <p align="justify" class="main"> evolution of corals in light of their changing environment  over their history.</p>
+          <p align="justify" class="main">I am also pursuing  questions related to how acidification impacts phytoplankton in the water  column as a means to</p>
+          <p align="justify" class="main"> create a dependable tool for paleoreconstruction of past  climates. A major determinant of global climate is the</p>
+          <p align="justify" class="main"> atmospheric CO2  concentration. A possible tool for making such assessments is through the use  of various</p>
+          <p align="justify" class="main"> forms of organic phytoplankton remains in the sediments. These  methods have been developed and tested</p>
+          <p align="justify" class="main"> during the last decade and found to be  lacking in several aspects, mainly these methods did not consider</p>
+          <p align="justify" class="main"> significant  physiological characteristics of phytoplankton such as active carbon transport.  I have developed a</p>
+          <p align="justify" class="main"> model that may be capable of extracting paleo atmospheric CO2  concentration values from the stable carbon</p>
+          <p align="justify" class="main"> isotope composition of  phytoplankton, considering the typical physiological parameters for each  species.</p>
+          <p align="justify" class="main"> The model is based on both in situ and in vivo measurements. This work  is summarized in two separate </p>
+          <p align="justify" class="main">manuscripts (Tchernov and Lifshultz <em>in  revision</em>, and Tchernov et al. <em>submitted</em>) that show the impact of</p>
+          <p align="justify" class="main"> temporal and spatial changes in the water on the stable carbon isotopes  composition of phytoplankton.</p>
+        </div>
+      </div>
+      <p align="justify" class="main">&nbsp;</p>
+      <div id="CollapsiblePanel3" class="CollapsiblePanel">
+        <div class="CollapsiblePanelTab" tabindex="0"><strong> Deep Coral Physiology</strong></div>
+        <div class="CollapsiblePanelContent">
+          <p align="justify" class="main">Most of the world's reefs lie below a depth of 50 meters, and normally  continue to 150 meters,  particularly in the</p>
+          <p align="justify" class="main"> Indo-Pacific realm.   This means that most of the reef has never been thoroughly investigated  due to technological</p>
+          <p align="justify" class="main"> limitations.   Recently, due to advancements in SCUBA technology (namely, more  accessible and affordable TRIMIX</p>
+          <p align="justify" class="main"> and rebreather systems)   it has  become possible to study the coral reefs at these depths in Eilat.  Because this is</p>
+          <p align="justify" class="main"> an entirely new research  area, there is a substantial amount of work underway analyzing and  understanding the</p>
+          <p align="justify" class="main"> basic physiology of the organisms living in those deep reefs.</p>
+          <p align="justify" class="main">Our findings include the description of a totally new  photosynthetic pathway and organization.   Deep corals and</p>
+          <p align="justify" class="main"> also macroalgae seem to have an extremely low  photosynthetic rate and an almost complete absence of PS1</p>
+          <p align="justify" class="main"> functional  response.  In the case of corals, this  makes this symbiosis questionable in terms of the benefit of the</p>
+          <p align="justify" class="main"> hosts.  We believe that the host is actually  contributing carbohydrates to the algal symbionts.  If this is true, it</p>
+          <p align="justify" class="main"> redefines the nature of  the symbiosis between corals and their algal symbionts.</p>
+          <p align="justify" class="main">Surprisingly, the photosynthetic organisms that dwell  at those depths have not lost their ability to produce high </p>
+          <p align="justify" class="main">rates of  photosynthesis at high light intensities, and do not show the characteristic  non-photochemical quenching</p>
+          <p align="justify" class="main"> evident from corals and macro algae living in  shallower depths.</p>
+          <p align="justify" class="main">We are currently in the final stages of fortifying and  retesting these results using different techniques prior to</p>
+          <p align="justify" class="main"> publishing.  Because of the novelty of this research, in  the process of analysis we have developed new</p>
+          <p align="justify" class="main"> techniques and machinery that  enable us to acquire data.  For example,  we have now a membrane inlet mass</p>
+          <p align="justify" class="main"> spectrometer that is linked to both a fast  repetition rate fluorometer and a pulse-amplitude modulated fluorometer,</p>
+          <p align="justify" class="main"> especially modified for this purpose.  I  believe that this is a promising new research direction that will be the</p>
+          <p align="justify" class="main"> foundation for a wide range of studies in the future.</p>
+        </div>
+      </div>
+      <p align="justify" class="main">&nbsp;</p>
+      <div id="CollapsiblePanel4" class="CollapsiblePanel">
+        <div class="CollapsiblePanelTab" tabindex="0">
+          <strong>The mechanisms leading to the changes in the Eastern Mediterranean Basin (EMB)</strong><strong> food web composition and complexity over the past 50 years.</strong></div>
+        <div class="CollapsiblePanelContent">
+          <p>Recent (less  than 200 year) anthropogenic changes impacting the Mediterranean Sea, an  already unique water body with regard to temperature gradient and salinity, are  leading to the tropicalization of an otherwise temperate sea, particularly in  the semi-enclosed Eastern Mediterranean Basin (EMB). The building of the Suez  canal, Aswan High Dam and anthropogenic nutrient enrichment (e.g. sewage and  aquaculture) have made a major contribution to the changes in the EMB. The  research presented here will elucidate how these stressors impact the EMB food  web, by concentrating on the ecology of the top predators in the near area  (groupers). The work will integrate several methods, 1) fish census, 2)  molecular phylogenetic and 3) compound-specific stable isotope geochemistry on  contemporary as well as pre, or earlier phase-impact specimens (museum  collections). This information will shed light on how these recent events have  impacted the food web and ecological relationships in our area; ultimately  providing us with the tools to predict future trends and supply us with the  necessary tools for creating sound management plans for our EMB ecosystem.</p>
+          <p><img src="images/burismall.jpg" width="500" height="375" alt="buri" /></p>
+        </div>
+      </div>
+      <p align="justify" class="main">&nbsp;</p>
+      <div id="CollapsiblePanel5" class="CollapsiblePanel">
+        <div class="CollapsiblePanelTab" tabindex="0">
+        <span><strong>Exploration of Mesophotic reefs In the Levantine Basin –  Community composition, Connectivity and changing trophic relations along a  depth gradient.</strong> </span> </div>
+        <div class="CollapsiblePanelContent">
+          <p>Abstract<br />
+            Mesophotic  ecosystems are defined as mid-depth ecosystems, typically ranging between 30  and 150 meters depth where the light supply declines, lowering photosynthesis,  and relatively high supply of nutrients from the deeper water. Mesophotic reefs  couple the open ocean and deep sea, with the shallower environments, and have  significant ecological processes influencing the rest of the natural systems in  the area: They provide refugia for species that   were out competed by Lessepsian migrants or depleted by anthropogenic  influences, and may provide a larval source to the damaged shallower reefs.  These reefs are a major carbon and nutrient sink as well as a nursery for  commercial fisheries that were depleted due to over fishing. Also, the sponge  reefs  are a rich source for exploring  new natural compounds for pharmaceutical or nutraceutical research. Recent  advancements in marine technologies, especially in diving technologies,  underwater photography and remote operating vehicles (ROVs), provide new tools  for exploring these deep ecosystems where   data is scarce or inexistent at present.<br />
+            The most  important taxonomic group in the mesophotic reefs in the eastern Mediterranean,  is the Porifera phylum. this group is considered to be being &ldquo;ecosystem  engineers&rdquo; as they creat complex three dimensional reefs with varied niches,  and are at large responsible for the trophic coupling between the open water  column and the benthic communities. The latter is mainly attributed to the  filter feeding capacity of these organisms, thus making them a major energy  source for the mesophotic reefs. <br />
+            Mesophotic  sponge reef communities in the eastern Mediterranean were discovered during  recent surveys conducted by the Israeli national parks authority. To Date, very  little research has been focused on the ecology and biodiversity of these  reefs. This research is intended to discover and map the mesophotic reefs of  the Israeli coast in the Levant, analyzing community composition with  phylogenetic inferences and understanding the ecological processes influencing  these unique ecosystems. </p>
+        </div>
+      </div>
+      <p align="justify" class="main">&nbsp;</p>
+      <p align="justify" class="main">&nbsp;</p>
+<p align="justify" class="main">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+      <p align="justify">&nbsp;</p>
+      <div align="justify"><br />
+        &nbsp;<br />
+      </div>
+    </div>
+    <h5>&nbsp;</h5>
+    <h3>&nbsp;</h3>
+  <!-- end .content --></div>
+  
+  <div class="footer">
+    <p><a href="#"><img src="images/hedder3.jpg" alt="Insert Logo Here" name="Insert_logo" width="943" height="45" border="0" usemap="#Insert_logoMap" id="Insert_logo" style="background: #C6D580; display:block; background-color: #FFFFFF; text-align: center;" />
+        <map name="Insert_logoMap" id="Insert_logoMap"><area shape="rect" coords="405,0,475,45" href="http://marsci.haifa.ac.il/en/academics/marine-biology" target="_new" alt="haifa" />
+          <area shape="rect" coords="0,2,70,47" href="http://www.haifa.ac.il/index.php/en/" target="_new" alt="haifa" />
+          <area shape="rect" coords="764,5,904,42" href="http://sbmmed.haifa.ac.il/" target="_new" alt="sbm" />
+        </map>
+    </a> </p>
+  <!-- end .footer --></div>
+<!-- end .container --></div>
+<script type="text/javascript">
+var CollapsiblePanel1 = new Spry.Widget.CollapsiblePanel("CollapsiblePanel1", {contentIsOpen:false});
+var CollapsiblePanel2 = new Spry.Widget.CollapsiblePanel("CollapsiblePanel2", {contentIsOpen:false});
+var CollapsiblePanel3 = new Spry.Widget.CollapsiblePanel("CollapsiblePanel3", {contentIsOpen:false});
+var CollapsiblePanel4 = new Spry.Widget.CollapsiblePanel("CollapsiblePanel4", {contentIsOpen:false});
+var CollapsiblePanel5 = new Spry.Widget.CollapsiblePanel("CollapsiblePanel5", {contentIsOpen:false});
+</script>
+</body>
+</html>

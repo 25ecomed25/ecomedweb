@@ -1,921 +1,284 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<!-- DW6 --><!-- Copyright 2005 Macromedia, Inc. All rights reserved. -->
+<script type="text/javascript">
+
+var slideimages = new Array() // create new array to preload images
+slideimages[0] = new Image() // create new instance of image object
+slideimages[0].src = "images/britle.jpg" // set image src property to image path, preloading image in the process
+slideimages[1] = new Image()
+slideimages[1].src = "images/britlestar.jpg"
+slideimages[2] = new Image()
+slideimages[2].src = "images/tridaknanot-in-focus.jpg"
+slideimages[3] = new Image()
+slideimages[3].src = "images/clounfish2.jpg"
+slideimages[4] = new Image()
+slideimages[4].src = "images/coral bahamas.jpg"
+slideimages[5] = new Image()
+slideimages[5].src = "images/IMG_1351.jpg"
+slideimages[6] = new Image()
+slideimages[6].src = "images/IMG_1381.jpg"
+slideimages[7] = new Image()
+slideimages[7].src = "images/trigon.jpg"
+slideimages[8] = new Image()
+slideimages[8].src = "images/IMG_1707a.jpg"
 
 
 
 
 
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <title>Home Page</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-
-
-
-
-
-  
-  
-  
-  
-  
-  
-  <link rel="stylesheet" href="mm_health_nutr.css" type="text/css" />
-
-
-
-
-
-
-  
-  
-  
-  
-  
-  
-  <script language="JavaScript" type="text/javascript">
-//--------------- LOCALIZEABLE GLOBALS ---------------
-var d=new Date();
-var monthname=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
-//Ensure correct for language. English is "January 1, 2004"
-var TODAY = monthname[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear();
-//--------------- END LOCALIZEABLE ---------------
-  </script>
-  
-  
-  
-  
-  
-  
-  <style type="text/css">
+//coral bahamas.jpg / conus.jpg /  turbinaria_closeup.jpg / trigon.jpg / spirobrunchus2.jpg
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style type="text/css">
 <!--
-.style2 {color: #CC0099}
-.style5 {
-font-size: 36px;
-color: #FFCCFF;
+body {
+	background: #42413C;
+	margin: 0;
+	padding: 0;
+	color: #000;
+	font-family: Tahoma;
+	font-size: 100%;
+	line-height: 1.4;
 }
-.style6 {color: #0000CC}
-.style7 {letter-spacing:.1em; text-decoration: none; font: 11px Arial, Helvetica, sans-serif; line-height: 16px;}
-.style9 {color: #FF3333}
-.style11 {
-color: #6699CC
+
+/* ~~ Element/tag selectors ~~ */
+ul, ol, dl { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
+	padding: 0;
+	margin: 0;
 }
-.style12 {
-font-size: 11px;
-color: #990000;
+ h4, h5, h6, p {
+	margin-top: 0;	 /* removing the top margin gets around an issue where margins can escape from their containing div. The remaining bottom margin will hold it away from any elements that follow. */
+	padding-right: 15px;
+	padding-left: 15px; /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
+	background-color: #FFF;
+	font-size: 12px;
+	font-weight: lighter;
+}
+	h1, h2, h3, p {
+	margin-top: 0;	 /* removing the top margin gets around an issue where margins can escape from their containing div. The remaining bottom margin will hold it away from any elements that follow. */
+	padding-right: 15px;
+	padding-left: 15px; /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
+	background-color: #FFF;
+	font-size: 12px;
+	font-weight: lighter;
+}
+a img { /* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
+	border: none;
+}
+
+/* ~~ Styling for your site's links must remain in this order - including the group of selectors that create the hover effect. ~~ */
+a:link {
+	color: #06F;
+	text-decoration: underline; /* unless you style your links to look extremely unique, it's best to provide underlines for quick visual identification */
+}
+a:visited {
+	color: #09F;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* this group of selectors will give a keyboard navigator the same hover experience as the person using a mouse. */
+	text-decoration: none;
+	color: #06F;
+}
+
+/* ~~this fixed width container surrounds the other divs~~ */
+.container {
+	width: 960px;
+	background: #FFF;
+	margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout */
+}
+
+/* ~~ the header is not given a width. It will extend the full width of your layout. It contains an image placeholder that should be replaced with your own linked logo ~~ */
+.header {
+	background: #FFFFFF;
+}
+
+/* ~~ These are the columns for the layout. ~~ 
+
+1) Padding is only placed on the top and/or bottom of the divs. The elements within these divs have padding on their sides. This saves you from any "box model math". Keep in mind, if you add any side padding or border to the div itself, it will be added to the width you define to create the *total* width. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design.
+
+2) No margin has been given to the columns since they are all floated. If you must add margin, avoid placing it on the side you're floating toward (for example: a right margin on a div set to float right). Many times, padding can be used instead. For divs where this rule must be broken, you should add a "display:inline" declaration to the div's rule to tame a bug where some versions of Internet Explorer double the margin.
+
+3) Since classes can be used multiple times in a document (and an element can also have multiple classes applied), the columns have been assigned class names instead of IDs. For example, two sidebar divs could be stacked if necessary. These can very easily be changed to IDs if that's your preference, as long as you'll only be using them once per document.
+
+4) If you prefer your nav on the right instead of the left, simply float these columns the opposite direction (all right instead of all left) and they'll render in reverse order. There's no need to move the divs around in the HTML source.
+
+*/
+.sidebar1 {
+	float: left;
+	width: 180px;
+	background: #FFFFFF;
+	padding-bottom: 10px;
+}
+.upperbar {
+	float: up;
+	background: #FFFFFF;
+	padding-bottom: 10px;
+}
+.content {
+	padding: 10px 0;
+	width: 780px;
+	float: left;
+	color: #000;
+	font-family: Tahoma;
+	letter-spacing: normal;
+	line-height: 2;
+	font: tahoma;
+}
+
+/* ~~ This grouped selector gives the lists in the .content area space ~~ */
+.content ul, .content ol { 
+	padding: 0 15px 15px 40px; /* this padding mirrors the right padding in the headings and paragraph rule above. Padding was placed on the bottom for space between other elements on the lists and on the left to create the indention. These may be adjusted as you wish. */
+}
+
+/* ~~ The navigation list styles (can be removed if you choose to use a premade flyout menu like Spry) ~~ */
+ul.nav {
+	list-style: none; /* this removes the list marker */
+	border-top: 1px solid #ffffff; /* this creates the top border for the links - all others are placed using a bottom border on the LI */
+	margin-bottom: 15px;
+	font-size: 10px;
+}
+ul.nav li {
+	border-bottom: 1px solid #ffffff; /* this creates the button separation */
+    }
+
+ul.nav a, ul.nav a:visited { /* grouping these selectors makes sure that your links retain their button look even after being visited */
+	padding: 5px 5px 5px 15px;
+	display: block; /* this gives the link block properties causing it to fill the whole LI containing it. This causes the entire area to react to a mouse click. */
+	width: 160px;  /*this width makes the entire button clickable for IE6. If you don't need to support IE6, it can be removed. Calculate the proper width by subtracting the padding on this link from the width of your sidebar container. */
+	text-decoration: none;
+	background: #FFFFFF;
+}
+ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background and text color for both mouse and keyboard navigators */
+	background: #ADB96E;
+	color: #FFF;
+}
+
+/* ~~ The footer ~~ */
+.footer {
+	padding: 10px 0;
+	background: #FFFFFF;
+	position: relative;/* this gives IE6 hasLayout to properly clear */
+	clear: both; /* this clear property forces the .container to understand where the columns end and contain them */
+}
+
+/* ~~ miscellaneous float/clear classes ~~ */
+.fltrt {  /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* this class can be used to float an element left in your page. The floated element must precede the element it should be next to on the page. */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* this class can be placed on a <br /> or empty div as the final element following the last floated div (within the #container) if the #footer is removed or taken out of the #container */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+.container .content h3 span font strong {
+	font-weight: bold;
+}
+ li { 
+display: inline; 
+padding: 20px; 
+}
+.main {
+	font-size: 10px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #000;
+	
+}
+.container .content h5 {
+	font-family: Tahoma;
+	font-size: 10px;
+	font-style: normal;
+}
+.en {
 }
 -->
-  </style>
-</head>
-
-
-<body style="background-color: rgb(244, 255, 228);">
-
-
-
-
-
-
-<div>
-<table style="width: 800px;" border="4" bordercolor="#ffffff" cellpadding="1" cellspacing="1">
-
-
-
-
-
-
-  <tbody>
-
-
-
-
-
-
-    <tr bgcolor="#d5edb3">
-
-
-
-
-
-
-      <td colspan="1" bgcolor="#ffffff"><img style="width: 512px; height: 154px;" src="images/britlestar.jpg" alt="britle" align="top" /></td>
-
-
-
-
-
-
-      <td rowspan="1" style="text-align: center; font-family: Times New Roman; color: rgb(51, 51, 255);" colspan="1" id="logo" bgcolor="#66ffcc" nowrap="nowrap" valign="bottom">
-      
-      
-      
-      
-      
-      
-      <h2>&nbsp; <img style="width: 500px; height: 30px;" alt="deep" src="images/deep-med-lab2.png" /> &nbsp; &nbsp; <br />
-
-
- &nbsp; &nbsp;</h2>
-
-
-
-
-
-
-      &nbsp;</td>
-
-
-
-
-
-
-      <td colspan="1" rowspan="1" style="background-color: rgb(102, 255, 255);"></td>
-
-
-
-
-
-
-    </tr>
-
-
-
-
-
-
-    <tr bgcolor="#d5edb3">
-
-
-
-
-
-
-      <td style="background-color: rgb(0, 255, 255); height: 40px;" colspan="1">&nbsp; <script language="JavaScript" type="text/javascript">document.write(TODAY); </script></td></td>
-
-
-
-
-
-
-      <td rowspan="1" style="color: rgb(0, 0, 0); font-family: Times New Roman,Times,serif; background-color: rgb(153, 255, 204); vertical-align: bottom; text-align: center;" class="style11" colspan="1" id="tagline">
-      
-      
-      
-      
-      
-      
-      <h1><big><big><big><big><big><big><span class="pageName style12"><span style="color: rgb(56, 22, 153); font-family: Tahoma;">Leon H
-Charney School of Marine Sciences, Unniversity of Haifa&nbsp;</span></span></big></big></big></big></big></big></h1>
-
-
-
-
-
-
-      
-      
-      
-
-      </td>
-
-
-
-
-
-
-      <td colspan="1" rowspan="1" style="background-color: rgb(134, 224, 134);"></td>
-
-
-
-
-
-
-    </tr>
-
-
-
-
-
-
-    <tr>
-
-
-
-
-
-
-    </tr>
-
-
-
-
-
-
-    <tr>
-
-
-
-
-
-
-    </tr>
-
-
-
-
-
-
-    <tr bgcolor="#99cc66">
-
-
-
-
-
-
-      <td colspan="5" id="dateformat" bgcolor="#ccffff" height="20">&nbsp;&nbsp;<a href="Contact_us.html"><img style="border: 0px solid ; width: 150px; height: 35px;" alt="contact us" src="images/Contact-us.png" /></a><a href="faculty.html"><img style="border: 0px solid ; width: 150px; height: 35px;" alt="staff" src="images/staff.png" /></a><a href="research.html"><img style="border: 0px solid ; width: 150px; height: 35px;" alt="research" src="images/research.png" /></a><a href="gradstudents.html"><img style="border: 0px solid ; width: 150px; height: 35px;" alt="grad students" src="images/Graduate-students.png" /></a><a href="diving.html"><img style="border: 0px solid ; width: 150px; height: 35px;" alt="diving" src="images/Diving.png" /></a><a href="Entrepreneurship.html"><img style="border: 0px solid ; width: 150px; height: 35px;" alt="Entrepreneurship" src="images/Entrepreneurship.png" /></a><a href="Publications.html"><img style="border: 0px solid ; width: 150px; height: 35px;" alt="publications" src="images/Publications.png" /></a>
-      
-      
-      
-      
-
-
-
-
-
-
-    </tr>
-
-
-
-
-
-
-    <tr>
-
-
-
-
-
-
-    </tr>
-
-
-
-
-
-
-    <tr>
-
-
-
-
-
-
-    </tr>
-
-
-
-
-
-
-    <tr>
-
-
-
-
-
-
-      <td colspan="2" rowspan="2" bordercolor="#FFFFFF" style="width: 200px; vertical-align: top; background-color: rgb(104, 178, 238); white-space: nowrap;">&nbsp;
-
-&nbsp;
-      
-      
-      
-      
-      
-      <div style="font-family: Arial; text-align: left;"><span style="font-style: italic;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />
-      <br />
-      </span>
-      <div style="text-align: left;">
-      <div style="text-align: center;"><font style="color: rgb(17, 40, 64); font-family: Verdana; font-size: 12pt; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px;"><strong>&nbsp; &nbsp; &nbsp; &nbsp;DEEP MED</strong><span class="Apple-converted-space">&nbsp;</span>RESEARCH GROUP (Established 2009)</font><br />
-      <br />
-      <font style="color: rgb(17, 40, 64); font-family: Verdana; font-size: 12pt; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px;">&nbsp; &nbsp; &nbsp; Marine Biology in the easternmost Mediterranean<span class="Apple-converted-space">&nbsp;</span></font><br />
-      <br />
-      <font style="color: rgb(17, 40, 64); font-family: Verdana; font-size: 12pt; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px;">&nbsp; &nbsp; &nbsp; Head of the DEEPMED: Dr.<span class="Apple-converted-space">&nbsp;</span><a href="http://deepmed.haifa.ac.il/Dan_Tchernov.htm" name="#Dan Tchernov" title="Dan Tchernov" style="text-decoration: underline; color: purple;">Dan Tchernov<span class="Apple-converted-space">&nbsp;</span></a></font><br />
-      <br />
-      <font style="color: rgb(17, 40, 64); font-family: Verdana; font-size: 12pt; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px;">&nbsp; &nbsp; &nbsp; Lab manager: Dr.<span class="Apple-converted-space">&nbsp;</span><a href="http://deepmed.haifa.ac.il/Eli.htm" name="#Eli Shemesh" title="Eli Shemesh" style="text-decoration: underline; color: purple;">Eli Shemesh<span class="Apple-converted-space">&nbsp;</span></a></font><br />
-      </div>
-      <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Main Topics<br />
-      <font style="color: rgb(17, 40, 64); font-family: Verdana; font-size: 12pt; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px;">&nbsp; &nbsp; &nbsp; <br />
-&nbsp; &nbsp; &nbsp; &nbsp;Physiology of Photosynthesis</font><br />
-      <br />
-      <font style="color: rgb(17, 40, 64); font-family: Verdana; font-size: 12pt; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px;">&nbsp; &nbsp; &nbsp; &nbsp;Ecology and biodivesity of the deep Levantine basin</font><br />
-      <br />
-      <font style="color: rgb(17, 40, 64); font-family: Verdana; font-size: 12pt; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px;">&nbsp; &nbsp; &nbsp; &nbsp;Deep benthos microbiology and biogeochemistry<br />
-&nbsp; &nbsp; &nbsp; &nbsp;<br />
-&nbsp; &nbsp; &nbsp; &nbsp;Masophotic reefs <br />
-      </font><br />
-      <font style="color: rgb(17, 40, 64); font-family: Verdana; font-size: 12pt; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px;">&nbsp; &nbsp; &nbsp; &nbsp;Global change - ocean acidification and coral bleaching</font><br />
-      <br />
-      <font style="color: rgb(17, 40, 64); font-family: Verdana; font-size: 12pt; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px;">&nbsp; &nbsp; &nbsp; &nbsp;Paleobiology&nbsp;</font><span style="color: rgb(17, 40, 64); font-family: Verdana; font-size: 16px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; display: inline ! important; float: none;"><span class="Apple-converted-space"> </span></span><br />
-      </div>
-      <span style="font-style: italic;"><br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;MIssion</span><small><em></em></small></div>
-
-
-
-
-
-      
-      
-      
-      
-      
-      <div style="text-align: justify; font-family: Arial;">
-      
-      
-      
-      
-      <pre></pre>
-
-
-
-
-      
-      
-      
-      
-      <div style="text-align: justify;">
-      
-      
-      
-      
-      <div style="margin-left: 40px; text-align: left;">&nbsp;Long and
-short-term environmental changes affect and modify &nbsp;complex
-&nbsp;biological systems on a multitude of levels.<br />
-
-      <br />
-&nbsp;From a strictly anthropocentric standpoint the understanding of
-such processes can assist in perceiving the current changes our<small><br />
-
-
-
-
-      </small>&nbsp;ecosystems are undergoing.<br />
-
-      <br />
-
-Our own habitat has entered an unfamiliar zone in terms of global carbon biogeochemical cycles, as atmospheric&nbsp;CO<sub>2</sub> levels rose<br />
-
-for the first time in 620,000 years above 280 ppmv. <br />
-
-      <br />
-
-These changes are bound to have significant effects on the global
-climate as the deviation from the glacial interglacial steady state <br />
-
-increases.<br />
-
-&nbsp;I have chosen to study two systems, corals and marine
-phytoplankton, which may assist in elucidating complex systems
-reactions <br />
-
-to environmental shifts. <br />
-
-      <br />
-
-My choice to study these systems was due to their evident responses to environmental changes and their abundance throughout the <br />
-
-geological record, thus providing contemporary &nbsp;physiologically
-measurable subjects that can be manipulated in the laboratory or<br />
-
-&nbsp;tested in-situ.<br />
-
-      <br />
-
-&nbsp;Additionally, these two systems leave behind skeletons that are
-harboring possible markers that can uncover past climatic events.<br />
-
-      <br />
-
-&nbsp;Both systems have a substantial fossil record that can help
-unravel the evolutionary changes that occurred following these events.<br />
-
-      <br />
-
-&nbsp;Yet another benefit arises from investigating these two systems
-simultaneously; a better understanding of the physiology of
-phytoplankton<br />
-
-&nbsp;increases the chance of correctly interpreting data from the much more complex coral symbiosis.<br />
-
-      <br />
-
-&nbsp;During the past five years my lab is going through a drastic
-change as we moved from the warm and tranquil setting of the Red sea to
-the <br />
-
-Mediterranean front.<br />
-
-&nbsp;&nbsp;<br />
-
-Here, we are facing a staggering enigma that I set my mind on tackling:
-what are the basic mechanisms that cause the immense shift of fauna<br />
-
-&nbsp;and flora over the past forty years.<br />
-
-      <br />
-
-Why the diversity split between deeper methane supported systems and shallow waters?<br />
-
-What is the part of man in all these rapid changes? <br />
-
-      <br />
-
-And ever since, we are amerced in totally new worlds that include
-investigating the biodiversity of the eastern basin, step by step,
-trying to get a<br />
-
-handle on the structure and functions of this ecosystem and establishing a baseline for future research to come.<br />
-
-&nbsp;<span style="font-family: Arial;"></span></div>
-
-
-
-
-      <span style="font-family: Arial;"></span></div>
-
-
-
-
-      
-      
-      
-      
-      <pre><span style="font-family: Arial;"><br /></span></pre>
-
-
-
-
-      
-      
-      
-      
-      <div style="font-style: italic; margin-left: 40px; text-align: center;"><small><span style="font-family: Arial;"><big>Our overarching research aspiration is to enhance our understanding of the</big></span><span style="font-family: Arial;"><big>fundamental<br />
-
-&nbsp;effects that global climatic changes has on the marine environment. </big></span><br />
-
-
-
-
-      <span style="font-family: Arial;"><big><br />
-
-Some of the current processes in the Mediterranean sea are intriguing and<br />
-
-
-
-
-&nbsp;we are </big></span><span style="font-family: Arial;"><big>looking into the source of the massive shift in the fauna and flora<br />
-
-
-
-
-that is </big></span><span style="font-family: Arial;"><big>ongoing for almost four decades<br />
-
-.</big></span></small></div>
-
-      
-      <div style="text-align: left; margin-left: 440px;">Still a long way to go: &nbsp;<br />
-
-      <span style="font-style: italic;">" The woods are lovely, dark and deep&nbsp; &nbsp;</span><br style="font-style: italic;" />
-
-      <span style="font-style: italic;">But I have promises to keep, </span><br style="font-style: italic;" />
-
-      <span style="font-style: italic;">And miles to go before I sleep, </span><br style="font-style: italic;" />
-
-      <span style="font-style: italic;">And miles to go before I sleep. "&nbsp; Robert frost</span><br />
-
-      </div>
-
-      </div>
-
-
-
-
-
-
-      
-      
-      
-      
-      <p class="MsoNormal" style="direction: ltr; unicode-bidi: embed; text-align: justify;"><big style="font-style: italic;"><big><span style="font-family: Arial;"></span>&nbsp;</big></big><span style="font-family: &quot;Arial&quot;,&quot;sans-serif&quot;;" dir="rtl" lang="HE"><o:p></o:p></span></p>
-
-
-
-
-
-&nbsp;<br />
-
-
-
-
-
-
-&nbsp;<br />
-
-
-
-
-      
-      
-      
-      
-      <p><span class="style6"></span></p>
-
-
-
-
-
-
-      &nbsp;&nbsp;
-      
-      
-      
-      
-      <h3 style="font-weight: normal;"></h3>
-
-
-
-
-      <br />
-
-
-
-
-      
-      
-      
-      
-      <p><span class="style6">&nbsp;</span></p>
-
-
-
-
-      </td>
-
-
-
-
-
-
-      
-
-      
-
-      
-
-      
-
-      <td colspan="1" style="width: 531px; font-family: Arial;">
-      
-      
-      
-      
-      
-      
-      <p>New Publications</p>
-
-
-
-
-
-
-      
-      
-      
-      
-      
-      
-      <p>
-
-      </p>
-
-
-
-
-      
-      
-      
-      
-      <div align="right">
-
-      
-      
-      
-      
-      <table class="MsoNormalTable" style="width: 457.85pt; margin-left: -1.7pt; border-collapse: collapse;" border="0" cellpadding="0" cellspacing="0" dir="rtl" width="610">
-
-
-
-
-
- <tbody>
-
-
-
-
-          <tr style="height: 56.25pt;">
-
-
-
-
-
-  <td style="padding: 0cm 5.4pt; width: 410.35pt; height: 56.25pt;" valign="top" width="547">
-  
-            
-            
-            
-            
-            <p class="MsoNormal" style="text-align: left; direction: ltr; unicode-bidi: embed;" dir="ltr"><span style="color: black;">Nir,
-  Orit, David F. Gruber, Eli Shemesh, Eliezra Glasser, and <b>Dan Tchernov</b>.
-  "Seasonal Mesophotic Coral Bleaching of Stylophora pistillata in the
-  Northern Red Sea."&nbsp;<i>PloS one</i>&nbsp;9.1: e84968. <o:p></o:p></span></p>
-
-
-
-
-
-  </td>
-
-
-
-
-
- </tr>
-
-
-
-
-
- <tr style="height: 75.75pt;">
-
-
-
-
-
-  <td style="padding: 0cm 5.4pt; width: 410.35pt; height: 75.75pt;" valign="top" width="547">
-  
-            
-            
-            
-            
-            <p class="MsoNormal" style="text-align: left; direction: ltr; unicode-bidi: embed;" dir="ltr"><span style="color: black;">M
-  Rubin-Blum, E Shemesh, B. N. Goodman-Tchernov, Dwight F. Coleman,&nbsp;Zvi
-  Ben-Avraham, and <b>Dan Tchernov</b> (2014) Cold seep biogenic crust in the
-  Levantine basin is inhabited by carbonate burrowing Phascolosoma turnerae, a
-  sipunculid worm hosting distinctive microbiota. In <i>Deep Sea Research Part
-  I</i>: Oceanographic Research Papers. 90: 17-26. <o:p></o:p></span></p>
-
-
-
-
-
-  </td>
-
-
-
-
-
- </tr>
-
-
-
-
-
- <tr style="height: 58.5pt;">
-
-
-
-
-
-  <td style="padding: 0cm 5.4pt; width: 410.35pt; height: 58.5pt;" valign="top" width="547">
-  
-            
-            
-            
-            
-            <p class="MsoNormal" style="text-align: left; direction: ltr; unicode-bidi: embed;" dir="ltr"><b><span style="color: black;">Dan
-  Tchernov</span></b><span style="color: black;">, David F. Gruber and Andrew Irwin. (2014) Isotopic
-  fractionation of carbon in the coccolithophorid, Emiliania huxleyi <i>Marine
-  Ecology Progress Series</i> /DOI 10.3354/meps10840 <o:p></o:p></span></p>
-
-
-
-
-
-  </td>
-
-
-
-
-
- </tr>
-
-
-
-
-
- <tr style="height: 65.25pt;">
-
-
-
-
-
-  <td style="padding: 0cm 5.4pt; width: 410.35pt; height: 65.25pt;" valign="top" width="547">
-  
-            
-            
-            
-            
-            <p class="MsoNormal" style="text-align: left; direction: ltr; unicode-bidi: embed;" dir="ltr"><span style="color: black;" lang="ES">Rami Tsadok, Maxim Rubin-Blum, Eli Shemesh and <b>Dan
-  Tchernov</b><sup><span style="">&nbsp; </span></sup>(2014) On the
-  occurrence and identification of Abudefduf saxatilis (Linnaeus, 1758)<span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>in the easternmost Mediterranean
-  Sea.<span style="">&nbsp; </span><i>Aquatic Invasions</i><sup> </sup>Volume
-  9, Issue 4 </span><span style="color: black;"><o:p></o:p></span></p>
-
-
-
-
-
-  </td>
-
-
-
-
-
- </tr>
-
-
-
-
-
-        
-        
-        
-        
-        </tbody>
-      
-      
-      
-      
-      </table>
-
-
-
-
-
-
-      </div>
-
-
-
-
-
-
-
-      
-      
-      
-      
-      
-      
-      <p></p>
-
-
-
-
-
-
-      
-      
-      
-      
-      
-      
-      <p>&nbsp;</p>
-
-
-
-
-      
-      
-      
-      
-      <p><img src="images/spirobrunchuos.jpg" alt="spirobrunchuos" height="300" width="429" /></p>
-
-
-
-
-
-
-      
-      
-
-      
-      
-      
-      
-      
-      
-      <p>&nbsp;<img style="border: 0px solid ; width: 432px; height: 300px;" src="images/tridacna_infocous.jpg" alt="tridacna" name="tridacna" id="tridacna" /></p>
-
-
-
-
-
-
-      
-      
-      
-      
-      
-      
-      <p>&nbsp;<span class="style6"><a href="http://www.haifa.ac.il/index.php/en/"><img style="border: 0px solid ; width: 77px; height: 55px;" alt="university site" src="images/haifa-logo-blue.png" /></a></span><span class="style6"><img src="school%20new%20logo1_r1_c3.jpg" alt="logo" height="58" width="197" /></span><a href="http://www.haifa.ac.il/index.php/en/"><span class="style6"></span></a><a href="http://sbmmed.haifa.ac.il/"><img style="border: 0px solid ; width: 186px; height: 56px;" alt="sbm" src="images/sbm.png" /></a><span class="style6"></span></p>
-
-
-
-
-
-
-      </td>
-
-
-
-
-
-
-    </tr>
-
-
-
-
-
-
+</style></head>
+
+<body>
+
+<div class="container">
+  <div class="header"><a href="#"><img src="images/hedder1.jpg" alt="Insert Logo Here" name="Insert_logo" width="960" height="45" id="Insert_logo" style="background: #C6D580; display:block; background-color: #FFFFFF; text-align: center;" /></a> 
+    <!-- end .header --></div>
+  <div class="sidebar1">
+    <ul class="nav">
     
-
-    <tr>
-
-
-
-
-
-
-      
-
-    </tr>
-
-
-
-
-
-
+        
     
+      <li><a href="aboutus.html">About us</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="graduates.html">Graduate students</a></li>
+      <li><a href="diving.html">Diving</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="donate.html">Donate</a></li>
+      <li><a href="contactus.html">Contact us</a></li>
+    </ul>
+    <p><!-- end .sidebar1 --><img src="images/britle.jpg" name="slide" width="102" height="65" id="slide" /></p>
+    <script type="text/javascript">
 
-  
-  
-  
-  
-  
-  
-  </tbody>
-</table>
+//variable that will increment through the images
+var step=0
 
+function slideit(){
+ //if browser does not support the image object, exit.
+ if (!document.images)
+  return
+ document.getElementById('slide').src = slideimages[step].src
+ if (step<8)
+  step++
+ else
+  step=0
+ //call function "slideit()" every 2.5 seconds
+ setTimeout("slideit()",2500)
+}
 
+slideit()
 
-
-
-
+</script>
+  </div>
+  <div class="content">
+    <p><span style="text-align: center;"><font style="color: rgb(17, 40, 64); font-family: Verdana; font-size: 12pt; font-style: normal; font-variant: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px;"><strong> &nbsp; </span></p>
+ <div class="main">   
+    <p align="left">The Deep Med Research Group (Established 2009)<br />
+      <br />
+      Marine Biology in the Eastern Mediterranean<br />
+      <br />
+      Head of the DEEPMED: Dr.<a href="http://deepmed.haifa.ac.il/Dan_Tchernov.htm" name="#Dan Tchernov" title="Dan Tchernov" id="#Dan Tchernov" >Dan Tchernov <br />
+        <br />
+      </a>Lab manager:<a href="http://deepmed.haifa.ac.il/Dan_Tchernov.htm" name="#Dan Tchernov" title="Dan Tchernov" > Dr.<span class="Apple-converted-space">&nbsp;</span><a href="http://deepmed.haifa.ac.il/Eli.htm" name="#Eli Shemesh" title="Eli Shemesh" id="#Eli Shemesh" style="text-decoration: underline; color: purple;">Eli Shemesh<span class="Apple-converted-space">&nbsp;</span></a></p>
 </div>
-
-
-
-
-
-
+    <h5>Main Topics</h5>
+<h6> &quot;<em> Physiology of Photosynthesis Ecology and biodivesity of the deep Levantine basin Deep benthos microbiology and biogeochemistry Masophotic reefs  Global change - ocean acidification and coral bleaching Paleobiology </em> &quot;</h6>
+    <h5> MIssion</h5>
+		
+    <h6 align="justify">Long and short-term environmental changes affect and modify complex biological systems on a multitude of levels. From a strictly anthropocentric standpoint the understanding of such processes can assist in perceiving the current changes our ecosystems are undergoing. Our own habitat has entered an unfamiliar zone in terms of global carbon biogeochemical cycles, as atmospheric CO2 levels rose for the first time in 620,000 years above 280 ppmv.  These changes are bound to have significant effects on the global climate as the deviation from the glacial interglacial steady state  increases. I have chosen to study two systems, corals and marine phytoplankton, which may assist in elucidating complex systems reactions  to environmental shifts.  My choice to study these systems was due to their evident responses to environmental changes and their abundance throughout the  geological record, thus providing contemporary physiologically measurable subjects that can be manipulated in the laboratory or tested in-situ. Additionally, these two systems leave behind skeletons that are harboring possible markers that can uncover past climatic events. Both systems have a substantial fossil record that can help unravel the evolutionary changes that occurred following these events. Yet another benefit arises from investigating these two systems simultaneously; a better understanding of the physiology of phytoplankton increases the chance of correctly interpreting data from the much more complex coral symbiosis. During the past five years my lab is going through a drastic change as we moved from the warm and tranquil setting of the Red sea to the  Mediterranean front. Here, we are facing a staggering enigma that I set my mind on tackling: what are the basic mechanisms that cause the immense shift of fauna and flora over the past forty years. Why the diversity split between deeper methane supported systems and shallow waters? What is the part of man in all these rapid changes?  And ever since, we are amerced in totally new worlds that include investigating the biodiversity of the eastern basin, step by step, trying to get a handle on the structure and functions of this ecosystem and establishing a baseline for future research to come.</h6>
+    <h6> Our overarching research aspiration is to enhance our understanding of thefundamental effects that global climatic changes has on the marine environment.  Some of the current processes in the Mediterranean sea are intriguing and we are looking into the source of the massive shift in the fauna and flora that is ongoing for almost four decades. </h6>
+    <h6>Still a long way to go:</h6>
+    <h6> &quot;<em> The woods are lovely, dark and deep  But I have promises to keep,  And miles to go before I sleep,  And miles to go before I sleep.</em> &quot;</h6>
+    <h6> Robert frost </h6>
+    <h3>&nbsp;</h3>
+  <!-- end .content --></div>
+  
+  <div class="footer">
+    <p><a href="#"><img src="images/hedder3.jpg" alt="Insert Logo Here" name="Insert_logo" width="943" height="45" border="0" usemap="#Insert_logoMap" id="Insert_logo" style="background: #C6D580; display:block; background-color: #FFFFFF; text-align: center;" />
+        <map name="Insert_logoMap" id="Insert_logoMap"><area shape="rect" coords="405,0,475,45" href="http://marsci.haifa.ac.il/en/academics/marine-biology" target="_new" alt="haifa" />
+          <area shape="rect" coords="0,2,70,47" href="http://www.haifa.ac.il/index.php/en/" target="_new" alt="haifa" />
+          <area shape="rect" coords="764,5,904,42" href="http://sbmmed.haifa.ac.il/" target="_new" alt="sbm" />
+        </map>
+    </a> </p>
+  <!-- end .footer --></div>
+<!-- end .container --></div>
 </body>
 </html>

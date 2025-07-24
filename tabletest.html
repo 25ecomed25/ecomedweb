@@ -1,0 +1,78 @@
+<!doctype html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Embedded Style Sheet</title>
+<link rel="stylesheet" href="file:///D|/Dropbox (University of Haifa)/Documents/website_2012/charney_web_2015/table.css"  >
+</head>
+<body>
+
+<div>
+	
+<h1>All-time Home Run Record</h1>
+<table>
+  <tr id="trHeader">
+    <th>Player</th>
+    <th>Home Runs</th>
+    <th>Team</th>
+  </tr>
+  <tr>
+    <td>Barry Bonds</td>
+    <td class="centerCell">762</td>
+    <td>Giants</td>
+  </tr>
+  <tr>
+    <td>Hank Aaron</td>
+    <td class="centerCell">755</td>
+    <td>Braves</td>
+  </tr>
+  <tr>
+    <td>Babe Ruth</td>
+    <td class="centerCell">714</td>
+    <td>Yankees</td>
+  </tr>
+  <tr>
+    <td>Willie Mays</td>
+    <td class="centerCell">660</td>
+    <td>Giants</td>
+  </tr>
+</table>
+</div>
+</body>
+</html>
+  
+Create a new file and save it as StyleSheet.css in the same directory. (You can give the file any name as long as it has the .css extension).
+Move all the CSS rules from the HTML file to the StyleSheet.css file. Don't copy the style tags.
+h1 {
+  text-align: center;
+  font-size: 1em;
+  color: #009;
+  margin-bottom: .3em;
+  text-decoration: underline;
+}
+
+table {
+  margin: .3em;
+  width: 290px;
+}
+
+th {
+  padding: .2em;
+}
+
+td {
+  padding-left: .5em;
+  padding-right: .5em;
+  border: 1px solid #900;
+  background-color: #ffc;
+}
+
+#trHeader {
+  text-decoration: underline;
+  color: #900;
+}
+
+.centerCell {
+  text-align: center;
+}

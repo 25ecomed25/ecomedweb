@@ -1,0 +1,684 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script src="SpryAssets/SpryCollapsiblePanel.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+var slideimages = new Array() // create new array to preload images
+slideimages[0] = new Image() // create new instance of image object
+slideimages[0].src = "images/britle.jpg" // set image src property to image path, preloading image in the process
+slideimages[1] = new Image()
+slideimages[1].src = "images/britlestar.jpg"
+slideimages[2] = new Image()
+slideimages[2].src = "images/tridaknanot-in-focus.jpg"
+slideimages[3] = new Image()
+slideimages[3].src = "images/clounfish2.jpg"
+slideimages[4] = new Image()
+slideimages[4].src = "images/coral bahamas.jpg"
+slideimages[5] = new Image()
+slideimages[5].src = "images/IMG_1351.jpg"
+slideimages[6] = new Image()
+slideimages[6].src = "images/IMG_1381.jpg"
+slideimages[7] = new Image()
+slideimages[7].src = "images/trigon.jpg"
+slideimages[8] = new Image()
+slideimages[8].src = "images/IMG_1707a.jpg"
+
+
+
+
+
+
+
+//coral bahamas.jpg / conus.jpg /  turbinaria_closeup.jpg / trigon.jpg / spirobrunchus2.jpg
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+body {
+	background: #42413C;
+	margin: 0;
+	padding: 0;
+	color: #000;
+	font-family: Tahoma;
+	font-size: 100%;
+	line-height: 1.4;
+	background-color: #FFF;
+}
+
+/* ~~ Element/tag selectors ~~ */
+ul, ol, dl { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* removing the top margin gets around an issue where margins can escape from their containing div. The remaining bottom margin will hold it away from any elements that follow. */
+	padding-right: 15px;
+	padding-left: 15px; /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
+	background-color: #FFF;
+	font-size: 10px;
+	font-weight: lighter;
+}
+a img { /* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
+	border: none;
+}
+
+/* ~~ Styling for your site's links must remain in this order - including the group of selectors that create the hover effect. ~~ */
+a:link {
+	color: #06F;
+	text-decoration: underline; /* unless you style your links to look extremely unique, it's best to provide underlines for quick visual identification */
+}
+a:visited {
+	color: #09F;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* this group of selectors will give a keyboard navigator the same hover experience as the person using a mouse. */
+	text-decoration: none;
+	color: #06F;
+}
+
+/* ~~this fixed width container surrounds the other divs~~ */
+.container {
+	width: 960px;
+	background: #FFF;
+	margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout */
+}
+
+/* ~~ the header is not given a width. It will extend the full width of your layout. It contains an image placeholder that should be replaced with your own linked logo ~~ */
+.header {
+	background: #FFFFFF;
+}
+
+/* ~~ These are the columns for the layout. ~~ 
+
+1) Padding is only placed on the top and/or bottom of the divs. The elements within these divs have padding on their sides. This saves you from any "box model math". Keep in mind, if you add any side padding or border to the div itself, it will be added to the width you define to create the *total* width. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design.
+
+2) No margin has been given to the columns since they are all floated. If you must add margin, avoid placing it on the side you're floating toward (for example: a right margin on a div set to float right). Many times, padding can be used instead. For divs where this rule must be broken, you should add a "display:inline" declaration to the div's rule to tame a bug where some versions of Internet Explorer double the margin.
+
+3) Since classes can be used multiple times in a document (and an element can also have multiple classes applied), the columns have been assigned class names instead of IDs. For example, two sidebar divs could be stacked if necessary. These can very easily be changed to IDs if that's your preference, as long as you'll only be using them once per document.
+
+4) If you prefer your nav on the right instead of the left, simply float these columns the opposite direction (all right instead of all left) and they'll render in reverse order. There's no need to move the divs around in the HTML source.
+
+*/
+.sidebar1 {
+	float: left;
+	width: 180px;
+	background: #FFFFFF;
+	padding-bottom: 10px;
+}
+.upperbar {
+	float: up;
+	background: #FFFFFF;
+	padding-bottom: 10px;
+}
+.content {
+	padding: 10px 0;
+	width: 780px;
+	float: left;
+	color: #000;
+	font-family: Tahoma;
+	letter-spacing: normal;
+	line-height: 2;
+	font: tahoma;
+}
+
+/* ~~ This grouped selector gives the lists in the .content area space ~~ */
+.content ul, .content ol { 
+	padding: 0 15px 15px 40px; /* this padding mirrors the right padding in the headings and paragraph rule above. Padding was placed on the bottom for space between other elements on the lists and on the left to create the indention. These may be adjusted as you wish. */
+}
+
+/* ~~ The navigation list styles (can be removed if you choose to use a premade flyout menu like Spry) ~~ */
+ul.nav {
+	list-style: none; /* this removes the list marker */
+	border-top: 1px solid #ffffff; /* this creates the top border for the links - all others are placed using a bottom border on the LI */
+	margin-bottom: 15px;
+	font-size: 10px;
+}
+ul.nav li {
+	border-bottom: 1px solid #ffffff; /* this creates the button separation */
+    }
+
+ul.nav a, ul.nav a:visited { /* grouping these selectors makes sure that your links retain their button look even after being visited */
+	padding: 5px 5px 5px 15px;
+	display: block; /* this gives the link block properties causing it to fill the whole LI containing it. This causes the entire area to react to a mouse click. */
+	width: 160px;  /*this width makes the entire button clickable for IE6. If you don't need to support IE6, it can be removed. Calculate the proper width by subtracting the padding on this link from the width of your sidebar container. */
+	text-decoration: none;
+	background: #FFFFFF;
+}
+ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background and text color for both mouse and keyboard navigators */
+	background: #ADB96E;
+	color: #FFF;
+}
+
+/* ~~ The footer ~~ */
+.footer {
+	padding: 10px 0;
+	background: #FFFFFF;
+	position: relative;/* this gives IE6 hasLayout to properly clear */
+	clear: both; /* this clear property forces the .container to understand where the columns end and contain them */
+}
+
+/* ~~ miscellaneous float/clear classes ~~ */
+.fltrt {  /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* this class can be used to float an element left in your page. The floated element must precede the element it should be next to on the page. */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* this class can be placed on a <br /> or empty div as the final element following the last floated div (within the #container) if the #footer is removed or taken out of the #container */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+.container .content h3 span font strong {
+	font-weight: bold;
+}
+ li { 
+display: inline; 
+padding: 20px; 
+}
+.main {
+	font-size: 10px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #000;
+	
+}
+.container .content h5 {
+	font-family: Tahoma;
+	font-size: 10px;
+	font-style: normal;
+}
+.container .content div pre strong {
+	font-family: Arial;
+	font-size: 16px;
+	font-style: normal;
+	line-height: normal;
+	color: #000;
+}
+-->
+</style>
+<link href="SpryAssets/SpryCollapsiblePanel.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<div class="container">
+  <div class="header"><a href="#"><img src="images/hedder1.jpg" alt="Insert Logo Here" name="Insert_logo" width="960" height="45" id="Insert_logo" style="background: #C6D580; display:block; background-color: #FFFFFF; text-align: center;" /></a> 
+    <!-- end .header --></div>
+  <div class="sidebar1">
+    <ul class="nav">
+    
+        
+    
+      <li><a href="aboutus.html">About us</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="graduates.html">Graduate students</a></li>
+      <li><a href="diving.html">Diving</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="donate.html">Donate</a></li>
+      <li><a href="contactus.html">Contact us</a></li>
+    </ul>
+    <p><!-- end .sidebar1 --><img src="images/britle.jpg" name="slide" width=102 height=65 id="slide" /></p>
+    <script type="text/javascript">
+
+//variable that will increment through the images
+var step=0
+
+function slideit(){
+ //if browser does not support the image object, exit.
+ if (!document.images)
+  return
+ document.getElementById('slide').src = slideimages[step].src
+ if (step<8)
+  step++
+ else
+  step=0
+ //call function "slideit()" every 2.5 seconds
+ setTimeout("slideit()",2500)
+}
+
+slideit()
+
+</script>
+  </div>
+  <div class="content">
+    <p><span style="text-align: center;"><font style="color: rgb(17, 40, 64); font-family: Verdana; font-size: 12pt; font-style: normal; font-variant: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px;"><strong> &nbsp; </span></p>
+ <div class="main">   
+    <p align="left">The Deep Med Research Group (Established 2009)<br />
+      <br />
+      Marine Biology in the Eastern Mediterranean<br />
+      <br />
+      Head of the DEEPMED: Dr.<a href="http://deepmed.haifa.ac.il/Dan_Tchernov.htm" name="#Dan Tchernov" title="Dan Tchernov" id="#Dan Tchernov" >Dan Tchernov <br />
+        <br />
+      </a>Lab manager:<a href="http://deepmed.haifa.ac.il/Dan_Tchernov.htm" name="#Dan Tchernov" title="Dan Tchernov" > Dr.<span class="Apple-converted-space">&nbsp;</span><a href="http://deepmed.haifa.ac.il/Eli.htm" name="#Eli Shemesh" title="Eli Shemesh" id="#Eli Shemesh" style="text-decoration: underline; color: purple;">Eli Shemesh<span class="Apple-converted-space">&nbsp;</span></a></p>
+</div>
+    <h5>&nbsp;</h5>
+    <div style="margin-left: 200px; text-align: left; margin-right: 0px; width: auto;">&nbsp;
+      <p align="justify" class="main">PhD Candidates</p>
+      <div id="CollapsiblePanel2" class="CollapsiblePanel">
+        <div class="CollapsiblePanelTab" tabindex="0"><strong>Yotam Popovich</strong></div>
+        <div class="CollapsiblePanelContent">
+          <p>Ph.D. candidate </p>
+          <p><img src="images/Picture5.jpg" width="85" height="101" alt="yotam" /><br />
+            Degrees:<br />
+            <br />
+            B.Sc. in marine biology and biotechnology from the Ben Gurion University.<br />
+            <br />
+            Research interests:<br />
+            Heavy metal uptake as a marine pollution measurement tool. <br />
+            Paleo-indicators to paleo-currents in the sceletal sturucture, currents and DBL.</p>
+          <p> </p>
+          <p>Email: <a href="mailto:yotpope@gmail.com?subject=yotam%20popovich" target="_self">yotpope@gmail.com</a></p>
+          <p> </p>
+          <p align="justify" class="main">&nbsp;</p>
+        </div>
+      </div>
+      
+      <div id="CollapsiblePanel3" class="CollapsiblePanel">
+        <div class="CollapsiblePanelTab" tabindex="0"><strong> Gur Mizrahi  </strong></div>
+        <div class="CollapsiblePanelContent">
+          <p>Post Doctoral scholar</p>
+          <p> <img src="images/gur.jpg" width="137" height="137" alt="gur" /></p>
+          <p>Phylogenetic Analysis of Gelatinous Marine Fauna in the Eastern Mediterranean Basin - An Ecosystem under Anthropogenic Stress </p>
+          <p> </p>
+          <p>Email <a href="mailto:gurrony@gmail.com?subject=request" target="_self">gurrony@gmail.com</a></p>
+          <p align="justify" class="main">&nbsp;</p>
+        </div>
+      </div>
+     
+      <div id="CollapsiblePanel4" class="CollapsiblePanel">
+        <div class="CollapsiblePanelTab" tabindex="0">
+          <strong>Shai Einbinder</strong></div>
+        <div class="CollapsiblePanelContent">
+          <p>Ph.D. candidate </p>
+          <p>The mesophotic reef community in the Gulf of Eilat and its physiological adaptations    </p>
+          <p><img src="images/hamaarag-monitoring.jpg" width="560" height="143" alt="maarag" /></p>
+          <div id="i4fjlso8" data-reactid=".0.$SITE_ROOT.$SITE_STRUCTURE.$PAGES_CONTAINER.1.1.$SITE_PAGES.$c1rsi.1.$i4fjlso8">
+            <div id="i4fjlso8richTextContainer" data-reactid=".0.$SITE_ROOT.$SITE_STRUCTURE.$PAGES_CONTAINER.1.1.$SITE_PAGES.$c1rsi.1.$i4fjlso8.0">
+              <p>Photographed by Hagai Nativ</p>
+            </div>
+          </div>
+          <div id="i4fjofgx" data-reactid=".0.$SITE_ROOT.$SITE_STRUCTURE.$PAGES_CONTAINER.1.1.$SITE_PAGES.$c1rsi.1.$i4fjofgx">
+            <div id="i4fjofgxrichTextContainer" data-reactid=".0.$SITE_ROOT.$SITE_STRUCTURE.$PAGES_CONTAINER.1.1.$SITE_PAGES.$c1rsi.1.$i4fjofgx.0">
+              <p> </p>
+              <p>Shai serves also as head technical CCR diver at the Mediterranean Monitoring program (under the MAARAG)</p>
+              <p><img src="images/maarag.png" width="238" height="110" alt="maarag" />        </p>
+              <p> </p>
+            </div>
+          </div>
+          <p>&nbsp;</p>
+<p>&nbsp;</p>
+        </div>
+      </div>
+      
+      <div id="CollapsiblePanel5" class="CollapsiblePanel">
+        <div class="CollapsiblePanelTab" tabindex="0">
+        <span><strong>Stephan  Martinez </strong> </span> </div>
+        <div class="CollapsiblePanelContent">
+          <div id="i4fk1z3b_0" data-reactid=".0.$SITE_ROOT.$SITE_STRUCTURE.$PAGES_CONTAINER.1.1.$SITE_PAGES.$c1qzl.1.$i4fk1z3b_0">
+            <div id="i4fk1z3b_0richTextContainer" data-reactid=".0.$SITE_ROOT.$SITE_STRUCTURE.$PAGES_CONTAINER.1.1.$SITE_PAGES.$c1qzl.1.$i4fk1z3b_0.0">
+              <h5>Stephan  Martinez</h5>
+              <h5>Ph.D. candidate <br />
+                <br />
+Degrees:<br />
+M.Sc. Marine Biology, Tel Aviv University<br />
+<br />
+Research interests:<br />
+Changes in isotopic composition of marine vertebrates on a spatial scale. </h5>
+            </div>
+          </div>
+          <div id="i4fk1z3q_0" data-reactid=".0.$SITE_ROOT.$SITE_STRUCTURE.$PAGES_CONTAINER.1.1.$SITE_PAGES.$c1qzl.1.$i4fk1z3q_0">
+            <div id="i4fk1z3q_0richTextContainer" data-reactid=".0.$SITE_ROOT.$SITE_STRUCTURE.$PAGES_CONTAINER.1.1.$SITE_PAGES.$c1qzl.1.$i4fk1z3q_0.0">
+              <p><img src="images/stephan_8649_1.jpg" width="168" height="150" alt="stephan" /></p>
+              <p>Photographed by Hagai Nativ</p>
+            </div>
+          </div>
+          <div id="i4fk1z3q_1" data-reactid=".0.$SITE_ROOT.$SITE_STRUCTURE.$PAGES_CONTAINER.1.1.$SITE_PAGES.$c1qzl.1.$i4fk1z3q_1">
+            <div id="i4fk1z3q_1richTextContainer" data-reactid=".0.$SITE_ROOT.$SITE_STRUCTURE.$PAGES_CONTAINER.1.1.$SITE_PAGES.$c1qzl.1.$i4fk1z3q_1.0">
+              <p> Stephan serves also as a technical CCR diver at the Mediterranean Monitoring program (under the MAARAG)     </p>
+</div>
+          </div>
+          <div data-exact-height="NaN" data-content-padding-horizontal="4" data-content-padding-vertical="4" title="" data-state="hasTouch" id="i4fk1z3r" data-reactid=".0.$SITE_ROOT.$SITE_STRUCTURE.$PAGES_CONTAINER.1.1.$SITE_PAGES.$c1qzl.1.$i4fk1z3r">
+            <div id="i4fk1z3rimg" data-state="loaded" data-reactid=".0.$SITE_ROOT.$SITE_STRUCTURE.$PAGES_CONTAINER.1.1.$SITE_PAGES.$c1qzl.1.$i4fk1z3r.0.0"><a href="http://www.hamaarag.org.il/%D7%AA%D7%95%D7%9B%D7%A0%D7%99%D7%AA-%D7%94%D7%A0%D7%99%D7%98%D7%95%D7%A8-%D7%91%D7%99%D7%9D-%D7%94%D7%AA%D7%99%D7%9B%D7%95%D7%9F" target="_blank" id="i4fk1z3rlink" data-reactid=".0.$SITE_ROOT.$SITE_STRUCTURE.$PAGES_CONTAINER.1.1.$SITE_PAGES.$c1qzl.1.$i4fk1z3r.0"><img alt="" src="http://static.wixstatic.com/media/b71b69_3b9f60d37014497e8450f18b4d65ebe3.png_srz_p_234_106_75_22_0.50_1.20_0.00_png_srz" id="i4fk1z3rimgimage" data-reactid=".0.$SITE_ROOT.$SITE_STRUCTURE.$PAGES_CONTAINER.1.1.$SITE_PAGES.$c1qzl.1.$i4fk1z3r.0.0.0" /></a></div>
+          </div>
+          <div id="i4fk43jp" data-reactid=".0.$SITE_ROOT.$SITE_STRUCTURE.$PAGES_CONTAINER.1.1.$SITE_PAGES.$c1qzl.1.$i4fk43jp">
+            <div id="i4fk43jprichTextContainer" data-reactid=".0.$SITE_ROOT.$SITE_STRUCTURE.$PAGES_CONTAINER.1.1.$SITE_PAGES.$c1qzl.1.$i4fk43jp.0">
+              <p>&nbsp;</p>
+              <p> </p>
+            </div>
+          </div>
+          <p>&nbsp;</p>
+        </div>
+      </div>
+      <div id="CollapsiblePanel6" class="CollapsiblePanel">
+        <div class="CollapsiblePanelTab" tabindex="0"><strong>Yaniv Levy</strong></div>
+        <div class="CollapsiblePanelContent">
+          <div id="i4fkd9k4_4" data-reactid=".0.$SITE_ROOT.$SITE_STRUCTURE.$PAGES_CONTAINER.1.1.$SITE_PAGES.$c1x10.1.$i4fkd9k4_4">
+            <div id="i4fkd9k4_4richTextContainer" data-reactid=".0.$SITE_ROOT.$SITE_STRUCTURE.$PAGES_CONTAINER.1.1.$SITE_PAGES.$c1x10.1.$i4fkd9k4_4.0">
+              <p><br />
+                Ph.D. candidate <br />
+                <br />
+                Degrees:<br />
+                M.Sc. Marine Biology, Tel Aviv University</p>
+              <p> <img src="images/imag006.jpg" width="400" height="300" alt="yaniv" /></p>
+              <p> </p>
+              <p>Research interests:</p>
+              <p>Populations, genetics, growth and conservation of sea turtles.</p>
+              <p> </p>
+              <p>Sea turtle project coordinator, Sea Turtle Rescue Center - Director</p>
+              <p>ISRAEL National Nature and Parks Authority  <a href="http://www.parks.org.il/parks/Pages/WhoWeAre.aspx"><img src="images/logo_rtg.png" width="104" height="93" alt="npa" /></a></p>
+              <p>IUCN SSC MTSG - Member of the International Union for Conservation of Nature, Species Survival Commission - Marine Turtle Specialist group </p>
+              <p>Mobile : 972 577 512220</p>
+              <p>Office : 972 9 8669173</p>
+              <p> (co-supervised by Gil Rilov)  </p>
+              <p> </p>
+              <p> </p>
+              <p>Mail: <a href="mailto:yaniv@npa.org.il?subject=yaniv@npa.org.il" target="_self">yaniv@npa.org.il</a></p>
+              <p> </p>
+              <p>The center for turtle rescue website:<a href="http://parks.org.il/seaTurtle.php" target="_blank">http://parks.org.il/seaTurtle.php</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="CollapsiblePanel7" class="CollapsiblePanel">
+        <div class="CollapsiblePanelTab" tabindex="0"><strong>Gal Dishon</strong></div>
+        <div class="CollapsiblePanelContent">
+          <div id="i4fknpjp" data-reactid=".0.$SITE_ROOT.$SITE_STRUCTURE.$PAGES_CONTAINER.1.1.$SITE_PAGES.$c1ozq.1.$i4fknpjp">
+            <div id="i4fknpjprichTextContainer" data-reactid=".0.$SITE_ROOT.$SITE_STRUCTURE.$PAGES_CONTAINER.1.1.$SITE_PAGES.$c1ozq.1.$i4fknpjp.0">
+              <p><img src="images/galdishon.jpg" width="134" height="178" alt="גל" /><br />
+                Ph.D. candidate <br />
+                <br />
+                Degrees:<br />
+                M.Sc. Marine Biology, Bar Ilan University</p>
+              <p> </p>
+              <p>Hints from the past - ancient reefs analyzes lead to present understanding and future projections                                                                                    </p>
+            </div>
+          </div>
+        t</div>
+      </div>
+      <div id="CollapsiblePanel8" class="CollapsiblePanel">
+        <div class="CollapsiblePanelTab" tabindex="0"><strong>Michal Grossovitch</strong></div>
+        <div class="CollapsiblePanelContent">
+          <div id="i4fl54s5_0" data-reactid=".0.$SITE_ROOT.$SITE_STRUCTURE.$PAGES_CONTAINER.1.1.$SITE_PAGES.$c1c49.1.$i4fl54s5_0">
+            <div id="i4fl54s5_0richTextContainer" data-reactid=".0.$SITE_ROOT.$SITE_STRUCTURE.$PAGES_CONTAINER.1.1.$SITE_PAGES.$c1c49.1.$i4fl54s5_0.0">
+              <h5> </h5>
+            </div>
+          </div>
+          <div id="i4fl54s5_1" data-reactid=".0.$SITE_ROOT.$SITE_STRUCTURE.$PAGES_CONTAINER.1.1.$SITE_PAGES.$c1c49.1.$i4fl54s5_1">
+            <div id="i4fl54s5_1richTextContainer" data-reactid=".0.$SITE_ROOT.$SITE_STRUCTURE.$PAGES_CONTAINER.1.1.$SITE_PAGES.$c1c49.1.$i4fl54s5_1.0">
+              <p><br />
+                Ph.D. candidate <br />
+                <img src="images/grosovitch.jpg" width="236" height="168" alt="groso" /><br />
+                Degrees:<br />
+                M.Sc. Marine Biology, Tel - Aviv University</p>
+              <p> </p>
+              <p>   Food web modelling in the estern Mediterranean co supervision with Sher D</p>
+              <p> </p>
+              <p><a href="mailto:micgros@gmail.com?subject=Michal%20Grossowicz" target="_self">micgros@gmail.com   </a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="CollapsiblePanel9" class="CollapsiblePanel">
+        <div class="CollapsiblePanelTab" tabindex="0"><strong>Amicam Bar-Gil </strong></div>
+        <div class="CollapsiblePanelContent">
+          <div id="i4flh2tb_1" data-reactid=".0.$SITE_ROOT.$SITE_STRUCTURE.$PAGES_CONTAINER.1.1.$SITE_PAGES.$c1mk3.1.$i4flh2tb_1">
+            <div id="i4flh2tb_1richTextContainer" data-reactid=".0.$SITE_ROOT.$SITE_STRUCTURE.$PAGES_CONTAINER.1.1.$SITE_PAGES.$c1mk3.1.$i4flh2tb_1.0">
+              <p><br />
+                Ph.D. candidate <br />
+                <img src="images/amicam.jpg" width="300" height="168" alt="amicam" /><br />
+                Mycosporine like amino acids  biochemistry and ecology in marine ecosystems</p>
+              <p> </p>
+              <p><a href="mailto:amicam.bar-gill@mail.huji.ac.il?subject=Amicam%20Bar-Gill" target="_self">amicam.bar-gill@mail.huji.ac.il     </a>             </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="CollapsiblePanel10" class="CollapsiblePanel">
+        <div class="CollapsiblePanelTab" tabindex="0"><strong>Adam Wiesman</strong></div>
+        <div class="CollapsiblePanelContent">
+          <div id="i4fm1wtb" data-reactid=".0.$SITE_ROOT.$SITE_STRUCTURE.$PAGES_CONTAINER.1.1.$SITE_PAGES.$csfa.1.$i4fm1wtb">
+            <div id="i4fm1wtbrichTextContainer" data-reactid=".0.$SITE_ROOT.$SITE_STRUCTURE.$PAGES_CONTAINER.1.1.$SITE_PAGES.$csfa.1.$i4fm1wtb.0">
+              <p>                Ph.D. candidate </p>
+              <p> <img src="images/adam (2).jpg" width="114" height="149" alt="adam" /></p>
+              <p>Exploration of Mesophotic Sponge Beds In the Levantine Basin – Community composition, Connectivity and changes in trophic relations along a depth gradient.</p>
+              <p> </p>
+              <p><a href="mailto:adam_weissman@hotmail.com?subject=Adam%20Weissman" target="_self">Aadam_weissman@hotmail.com     </a>   </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="CollapsiblePanel11" class="CollapsiblePanel">
+        <div class="CollapsiblePanelTab" tabindex="0"><strong>Tamar Leshem</strong></div>
+        <div class="CollapsiblePanelContent">
+          <div id="i4fmdreh" data-reactid=".0.$SITE_ROOT.$SITE_STRUCTURE.$PAGES_CONTAINER.1.1.$SITE_PAGES.$c1oce.1.$i4fmdreh">
+            <div id="i4fmdrehrichTextContainer" data-reactid=".0.$SITE_ROOT.$SITE_STRUCTURE.$PAGES_CONTAINER.1.1.$SITE_PAGES.$c1oce.1.$i4fmdreh.0">
+              <p>                Ph.D. candidate </p>
+              <p> Interactions between algae  and the chytrid fungus (co supervision with A sukenik)</p>
+<p> <a href="mailto:tleshemtamar2@gmail.com?subject=tamar%20leshem" target="_self">leshemtamar2@gmail.com</a></p>
+</div>
+          </div>
+        </div>
+      </div>
+      <div id="CollapsiblePanel12" class="CollapsiblePanel">
+        <div class="CollapsiblePanelTab" tabindex="0"><strong>Tova Perel   </strong> </div>
+        <div class="CollapsiblePanelContent">
+          <div id="i4fminci" data-reactid=".0.$SITE_ROOT.$SITE_STRUCTURE.$PAGES_CONTAINER.1.1.$SITE_PAGES.$c10tp.1.$i4fminci">
+            <div id="i4fmincirichTextContainer" data-reactid=".0.$SITE_ROOT.$SITE_STRUCTURE.$PAGES_CONTAINER.1.1.$SITE_PAGES.$c10tp.1.$i4fminci.0">
+              <p>                Ph.D. candidate </p>
+              <p> Comparative community genomics and evolution in Dead Sea fungus  (co-supervised by   Aviatar Nevo)</p>
+<p> <a href="mailto:tovapster@gmail.com?subject=%D7%98%D7%95%D7%91%D7%94%20%D7%A4%D7%A8%D7%9C" target="_self">tovapster@gmail.com</a></p>
+</div>
+          </div>
+        </div>
+      </div>
+      <div id="CollapsiblePanel13" class="CollapsiblePanel">
+        <div class="CollapsiblePanelTab" tabindex="0">Adi Barash  </div>
+        <div class="CollapsiblePanelContent">
+          <div id="i4fmmx0m_0" data-reactid=".0.$SITE_ROOT.$SITE_STRUCTURE.$PAGES_CONTAINER.1.1.$SITE_PAGES.$c1gt2.1.$i4fmmx0m_0">
+            <div id="i4fmmx0m_0richTextContainer" data-reactid=".0.$SITE_ROOT.$SITE_STRUCTURE.$PAGES_CONTAINER.1.1.$SITE_PAGES.$c1gt2.1.$i4fmmx0m_0.0">
+              <p>                Ph.D. candidate <br />
+                <img src="images/adi.jpg" width="92" height="92" alt="adi" /><br />
+                Degrees:<br />
+                M.Sc.  Biology, Haifa University</p>
+              <p> </p>
+              <p>Biodiversity assessment of the elasmobranch (shark and ray) fauna of Israel, with first insights into species ecology and distribution patterns.</p>
+              <p> </p>
+              <p><a href="mailto:Adibarash@hotmail.com?subject=Adi" target="_self">Adibarash@hotmail.com</a>  </p>
+</div>
+          </div>
+        </div>
+      </div>
+      <div id="CollapsiblePanel14" class="CollapsiblePanel">
+        <div class="CollapsiblePanelTab" tabindex="0">Rami Tsadok</div>
+        <div class="CollapsiblePanelContent">
+          <p>Ph.D. candidate</p>
+          <p> <img src="images/RamiTsadok.jpg" width="176" height="176" alt="rami" /></p>
+          <p>Eastern Mediterranean&rsquo;s Continental Slopes and Deeper</p>
+          <p>The Quest to Reveal the &ldquo;Oases&rdquo; of the Ecosystem</p>
+          <p> </p>
+          <p>Giving the lack of information thus far obtained from the deep-sea environment in the Eastern Mediterranean, we believe we have a unique opportunity to discover new deep-sea structural features, new communities and even new species. There is an introduction; some preliminary results, but then a void. </p>
+          <p> </p>
+          <p>Email <a href="mailto:rami.tsadok@gmail.com?subject=rami" target="_self">rami.tsadok@gmail.com</a></p>
+        </div>
+      </div>
+      <div id="CollapsiblePanel15" class="CollapsiblePanel">
+        <div class="CollapsiblePanelTab" tabindex="0">Leigh Kroeger</div>
+        <div class="CollapsiblePanelContent">
+          <p>PhD candidate </p>
+          <p>&nbsp;</p>
+          <p>Functional characterization of the Bcl-2 family members derived from the stony coral Stylophora pistillata inhabiting the Gulf of Eilat (co supervised with O Ayalon)</p>
+          <p> <a href="mailto:leigh.kroeger@gmail.com?subject=Leigh%20Kroeger%20Email" target="_self">leigh.kroeger@gmail.com</a></p>
+        </div>
+      </div>
+      <pre align="justify"><strong>
+
+Alumni</strong></pre>
+      <p align="justify" class="main">PhD &amp; Postdocs</p>
+      <div id="CollapsiblePanel1" class="CollapsiblePanel">
+        <div class="CollapsiblePanelTab" tabindex="0"><strong>Nir Orit </strong></div>
+        <div class="CollapsiblePanelContent">
+          <div id="i486o62l" data-reactid=".0.$SITE_ROOT.$SITE_STRUCTURE.$PAGES_CONTAINER.1.1.$SITE_PAGES.$c1zzh.1.$i486o62l">
+            <div id="i486o62lrichTextContainer" data-reactid=".0.$SITE_ROOT.$SITE_STRUCTURE.$PAGES_CONTAINER.1.1.$SITE_PAGES.$c1zzh.1.$i486o62l.0">
+              <h2> <br />
+                <br />
+                Ph.D - 2015<br />
+                <br />
+                Degrees:<br />
+                B.Sc in Biology (cum Laude), The Hebrew University of Jerusalem. <br />
+                <br />
+                M.Sc. in the program of Environmental Studies, The Hebrew University of Jerusalem (courses completed cum Laude).</h2>
+              <p>Research interests:<br />
+                Marine photosynthesis.<br />
+                The symbbiosis between marine anthozoa and dinoflagellates.</p>
+              <p> </p>
+              <p>EMAIL: <a href="mailto:oritnir.eco@gmail.com?subject=orit" target="_self">oritnir.eco@gmail.com</a></p>
+            </div>
+          </div>
+          <div data-exact-height="NaN" data-content-padding-horizontal="0" data-content-padding-vertical="0" title="orit nir.jpg" data-state="hasTouch" id="i486o62l_0" data-reactid=".0.$SITE_ROOT.$SITE_STRUCTURE.$PAGES_CONTAINER.1.1.$SITE_PAGES.$c1zzh.1.$i486o62l_0">
+            <div id="i486o62l_0link" data-reactid=".0.$SITE_ROOT.$SITE_STRUCTURE.$PAGES_CONTAINER.1.1.$SITE_PAGES.$c1zzh.1.$i486o62l_0.0"> <br />
+              <p align="justify" class="main">&nbsp;</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="CollapsiblePanel16" class="CollapsiblePanel">
+        <div class="CollapsiblePanelTab" tabindex="0">Baraka Kuguru</div>
+        <div class="main">
+          <h3>Ph.D. 2010</h3>
+          <h3><a href="http://www.sciencedirect.com/science/article/pii/S002209811000256X" data-clk="hl=en&amp;sa=T&amp;ct=res&amp;cd=3&amp;ei=TukXVcyTLoiB0QHAlYCgCw"></a>The light adaptation and acclimation of Coralimorpharians in the gulf of Eilat. Co-supervised with Prof. Yair Achituv (BIU)</h3>
+          <p align="right" dir="rtl">&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>current possition: Senior research officer at	Tanzania Fisheries Research Institute <br />
+          Dar es Salaam, Tanzania</p>
+<p>&nbsp;</p>
+        </div>
+      </div>
+      <div id="CollapsiblePanel17" class="CollapsiblePanel">
+        <div class="CollapsiblePanelTab" tabindex="0">Ofer Ben-Tzvi</div>
+        <div class="CollapsiblePanelContent">
+          <p>2008-9	Post-doctoral fellow</p>
+          <p> Coral biochemical attractants and repellants for larvae recruitment in the gulf of Eialt </p>
+        </div>
+      </div>
+      <div id="CollapsiblePanel18" class="CollapsiblePanel">
+        <div class="CollapsiblePanelTab" tabindex="0">Oded Liran</div>
+        <div class="main">
+          <p>&nbsp;</p>
+          <p>PhD 2014</p>
+          <p><img src="images/oded.jpg" width="224" height="299" alt="oded" /></p>
+          <p>characterize photosynthesis as the underlying mechanism for any phenomena that governs the life cycle of single celled phytoplankton</p>
+          <p>current possition: Post doctorate researcher</p>
+          <p>Britannia Building, Room 603 Department of Molecular Biology and Ecology of Plants George S. Wise Faculty of Life Sciences                                                                                  Tel Aviv University, Tel Aviv 69978, Israe</p>
+          <p>l  E-mail: odedliran@ gmail.com </p>
+          <p>Phone: +972-3-640-5152 </p>
+          <p>Fax: +972-3-640-5315</p>
+        </div>
+      </div>
+      <div id="CollapsiblePanel19" class="CollapsiblePanel">
+        <div class="CollapsiblePanelTab" tabindex="0">Max Rubin Blum</div>
+        <div class="main">
+          <p>Phd 2014: Deep sea microbial consortiums under cold methane seeps</p>
+          <p>current possition: <a href="https://mpi-bremen.academia.edu/" itemprop="affiliation">Max Planck Institute for Marine Microbiology</a>, <a href="https://mpi-bremen.academia.edu/Departments/Department_of_Symbiosis">Department of Symbiosis</a>, <span itemprop="jobTitle">Post-Doc</span></p>
+          <p>&nbsp;</p>
+</div>
+      </div>
+      <div id="CollapsiblePanel20" class="CollapsiblePanel">
+        <div class="CollapsiblePanelTab" tabindex="0">Hagit Kvitt</div>
+        <div class="main">
+          <p>PhD 2014  The molecular mechanism of coral apoptosis</p>
+          <div id="Hagitinfo">
+            <div link="#ff0000">
+              <p><strong><em>Degrees:</em></strong></p>
+              <p>-B.Sc in Animal Sciences, The Hebrew University, Jerusalem.</p>
+              <p>-M.Sc. in Human Genetics, The Hebrew University, Jerusalem. On the topic: Extended haplotype analysis of cystic fibrosis mutations and its implications for the selective advantage hypothesis.(See publications).</p>
+              <p><strong><img src="http://deepmed.haifa.ac.il/Hagit_Kvitt/picture3.jpg" alt="" width="200" height="150" border="0" /></strong></p>
+              <p><strong>Research Interest:</strong><em> Genetic analysis and Apoptosis in corals.</em></p>
+              <p>Mail:<a href="mailto:hagit.kvitt@mail.huji.ac.il" name="Mail Hagit" id="Mail Hagit"> Hagit.kvitt@mail.huji.ac.il</a></p>
+              <p><strong>Publications:</strong></p>
+              <p>Extended haplotype analysis of cystic fibrosis mutations and its implications for the selective advantage hypothesis. Sereth (Kvitt) H., Shoshani T., Bashan N., Kerem B-S. Human Genetics (1993) 92: 289-295.</p>
+              <p>A new mutation in the CFTR gene, composed of two adjacent DNA alterations, is a common cause of cystic fibrosis among Georgian Jews. Shoshani, T. ; Berkun, Y. ; Yahav, Y. ; Augarten, A. ; Bashan, N. ; Rivlin, Y. ; Gazit, E. ; <a href="http://www.osti.gov/energycitations/searchresults.jsp?Author=%22Sereth,%20H.%22" name="Follow the link" id="Follow the link">Sereth (Kvitt)</a>, H. ; Kerem, E. ; Kerem, B.S. Genomics (1993) 15: 236-237.</p>
+              <p>Mycobacteriosis in wild rabbitfish Siganus rivulatus associated with cage farmingin the Gulf of Eilat, Red Sea A. Diamant, A. Banet, M. Ucko, A. Colorni, W. Knibb, H.Kvitt Dis Aquat Org (2000) 39: 211-219.</p>
+              <p>Photobacterium damselae ssp. Piscicida: detection by direct amplification of 16S rRNA gene sequences and genotypic variation as determined by amplified fragment length polymorphism (AFLP). Kvitt H., Ucko M. ,Colorni A., Batargias C., Zlotkin A., Knibb W. Dis Aquat Org. (2002) 48:187-195.</p>
+              <p>Streptococcus iniae infections in Red Sea cage-cultured and wild fishes. A. Colorni, A. Diamant1, A. Eldar, H. Kvitt, A. Zlotkin. Dis Aquat Org (2002) 49:165-170.</p>
+              <p>Strain Variation in Mycobacterium marinum Fish Isolates M. Ucko, A. Colorni, H. Kvitt, A. Diamant, A. Zlotkin, W. R. Knibb. Appl. Environ. Microbiol. (2002) 5281-5287</p>
+              <p>Strain variation and geographic endemism in Streptococcus iniae. Kvitt H., Colorni A. Dis Aquat Org. (2004) 61:67-73.</p>
+              <p>Detection and phylogeny of Lymphocystivirus in sea bream Sparus aurata based on the DNA polymerase gene and major capsid protein sequences. Kvitt H., Heinisch G., Diamant A. Aquaculture (2008) 275:8-63.</p>
+              <p>Tchernov, D., H. Kvitt, L. Haramaty, T.S. Bibby,  M.Y. Gorbunov,  H. Rosenfeld,  and P.G. Falkowski.(2011)  Apoptosis and the selective survival of host animals following thermal bleaching in zooxanthellate corals. Proceedings Of The National Academy Of Sciences Of The United States Of America, 108(24): p. 9905-9909.</p>
+              <p>Kvitt, H., H. Rosenfeld, K. Zandbank, and D. Tchernov. (2011)  Regulation of Apoptotic Pathways by Stylophora pistillata (Anthozoa, Pocilloporidae) to Survive Thermal Stress and Bleaching. PLoS ONE, 6(12). </p>
+              <p>Kvitt,  Hagit, Esti Kramarsky-Winter, Keren Maor-Landaw, Keren Zandbank, Ariel  Kushmaro, Hanna Rosenfeld, Maoz Fine, and<strong> Dan Tchernov</strong>. &quot;Breakdown  of coral colonial form under reduced pH conditions is initiated in polyps and  mediated through apoptosis.&quot;&nbsp;<em>Proceedings of the National Academy  of Sciences</em>&nbsp;112, no. 7 (2015): 2082-2086.</p>
+              <p>&nbsp;</p>
+              <div id="pic1"></div>
+              <div id="pic2"></div>
+              <div id="pic3"></div>
+            </div>
+          </div>
+          <div id="RBHOBJ7DA5010818371812"></div>
+          <div id="RBHOBJ7DA741D9122E1A12"></div>
+          <div id="SGROBJ7DA5010B2971"></div>
+          <p>&nbsp;</p>
+        </div>
+      </div>
+      <div id="CollapsiblePanel21" class="CollapsiblePanel">
+        <div class="CollapsiblePanelTab" tabindex="0">Gur Mizrahi</div>
+        <div class="main">
+          <p>PhD  - 2014 Phylogenetic Analysis of Gelatinous Marine Fauna in the Eastern Mediterranean Basin - An Ecosystem under Anthropogenic Stress</p>
+          <p>current possitions: POstdoc Fellow, and Head of the M.eD program in Oholo College. </p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+      </div>
+      <p align="justify" class="main">&nbsp;</p>
+<p align="justify" class="main">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+      <p align="justify">&nbsp;</p>
+      <div align="justify"><br />
+        &nbsp;<br />
+      </div>
+    </div>
+    <h5>&nbsp;</h5>
+  <!-- end .content --></div>
+  
+  <div class="footer">
+    <p><a href="#"><img src="images/hedder3.jpg" alt="Insert Logo Here" name="Insert_logo" width="943" height="45" border="0" usemap="#Insert_logoMap" id="Insert_logo" style="background: #C6D580; display:block; background-color: #FFFFFF; text-align: center;" />
+        <map name="Insert_logoMap" id="Insert_logoMap"><area shape="rect" coords="405,0,475,45" href="http://marsci.haifa.ac.il/en/academics/marine-biology" target="_new" alt="haifa" />
+          <area shape="rect" coords="0,2,70,47" href="http://www.haifa.ac.il/index.php/en/" target="_new" alt="haifa" />
+          <area shape="rect" coords="764,5,904,42" href="http://sbmmed.haifa.ac.il/" target="_new" alt="sbm" />
+        </map>
+    </a> </p>
+  <!-- end .footer --></div>
+<!-- end .container --></div>
+<script type="text/javascript">
+var CollapsiblePanel1 = new Spry.Widget.CollapsiblePanel("CollapsiblePanel1", {contentIsOpen:false});
+var CollapsiblePanel2 = new Spry.Widget.CollapsiblePanel("CollapsiblePanel2", {contentIsOpen:false});
+var CollapsiblePanel3 = new Spry.Widget.CollapsiblePanel("CollapsiblePanel3", {contentIsOpen:false});
+var CollapsiblePanel4 = new Spry.Widget.CollapsiblePanel("CollapsiblePanel4", {contentIsOpen:false});
+var CollapsiblePanel5 = new Spry.Widget.CollapsiblePanel("CollapsiblePanel5", {contentIsOpen:false});
+var CollapsiblePanel6 = new Spry.Widget.CollapsiblePanel("CollapsiblePanel6", {contentIsOpen:false});
+var CollapsiblePanel7 = new Spry.Widget.CollapsiblePanel("CollapsiblePanel7", {contentIsOpen:false});
+var CollapsiblePanel8 = new Spry.Widget.CollapsiblePanel("CollapsiblePanel8", {contentIsOpen:false});
+var CollapsiblePanel9 = new Spry.Widget.CollapsiblePanel("CollapsiblePanel9", {contentIsOpen:false});
+var CollapsiblePanel10 = new Spry.Widget.CollapsiblePanel("CollapsiblePanel10", {contentIsOpen:false});
+var CollapsiblePanel11 = new Spry.Widget.CollapsiblePanel("CollapsiblePanel11", {contentIsOpen:false});
+var CollapsiblePanel12 = new Spry.Widget.CollapsiblePanel("CollapsiblePanel12", {contentIsOpen:false});
+var CollapsiblePanel13 = new Spry.Widget.CollapsiblePanel("CollapsiblePanel13", {contentIsOpen:false});
+var CollapsiblePanel14 = new Spry.Widget.CollapsiblePanel("CollapsiblePanel14", {contentIsOpen:false});
+var CollapsiblePanel16 = new Spry.Widget.CollapsiblePanel("CollapsiblePanel16", {contentIsOpen:false});
+var CollapsiblePanel17 = new Spry.Widget.CollapsiblePanel("CollapsiblePanel17", {contentIsOpen:false});
+var CollapsiblePanel18 = new Spry.Widget.CollapsiblePanel("CollapsiblePanel18", {contentIsOpen:false});
+var CollapsiblePanel15 = new Spry.Widget.CollapsiblePanel("CollapsiblePanel15", {contentIsOpen:false});
+var CollapsiblePanel19 = new Spry.Widget.CollapsiblePanel("CollapsiblePanel19", {contentIsOpen:false});
+var CollapsiblePanel20 = new Spry.Widget.CollapsiblePanel("CollapsiblePanel20", {contentIsOpen:false});
+var CollapsiblePanel21 = new Spry.Widget.CollapsiblePanel("CollapsiblePanel21", {contentIsOpen:false});
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+    background-color: #4847DF;
+	nav: 3 
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  padding: 8px;
+  background-color: #dddddd;
+}
+    
+
+h2 {
+    color: #287127;
+    margin-left: 20px;
+}
+
+
+body {
+  background-color: lightblue;
+}
+
+h1 {
+  color: navy;
+  margin-left: 20px;
+}
+

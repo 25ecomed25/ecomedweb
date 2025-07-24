@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script type="text/javascript">
+
+var slideimages = new Array() // create new array to preload images
+slideimages[0] = new Image() // create new instance of image object
+slideimages[0].src = "images/britle.jpg" // set image src property to image path, preloading image in the process
+slideimages[1] = new Image()
+slideimages[1].src = "images/britlestar.jpg"
+slideimages[2] = new Image()
+slideimages[2].src = "images/tridaknanot-in-focus.jpg"
+
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+body {
+	background: #42413C;
+	margin: 0;
+	padding: 0;
+	color: #000;
+	font-family: Tahoma;
+	font-size: 100%;
+	line-height: 1.4;
+}
+
+/* ~~ Element/tag selectors ~~ */
+ul, ol, dl { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* removing the top margin gets around an issue where margins can escape from their containing div. The remaining bottom margin will hold it away from any elements that follow. */
+	padding-right: 15px;
+	padding-left: 15px; /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
+	background-color: #FFF;
+	font-size: 10px;
+	font-weight: lighter;
+}
+a img { /* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
+	border: none;
+}
+
+/* ~~ Styling for your site's links must remain in this order - including the group of selectors that create the hover effect. ~~ */
+a:link {
+	color: #06F;
+	text-decoration: underline; /* unless you style your links to look extremely unique, it's best to provide underlines for quick visual identification */
+}
+a:visited {
+	color: #09F;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* this group of selectors will give a keyboard navigator the same hover experience as the person using a mouse. */
+	text-decoration: none;
+	color: #06F;
+}
+
+/* ~~this fixed width container surrounds the other divs~~ */
+.container {
+	width: 960px;
+	background: #FFF;
+	margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout */
+}
+
+/* ~~ the header is not given a width. It will extend the full width of your layout. It contains an image placeholder that should be replaced with your own linked logo ~~ */
+.header {
+	background: #FFFFFF;
+}
+
+/* ~~ These are the columns for the layout. ~~ 
+
+1) Padding is only placed on the top and/or bottom of the divs. The elements within these divs have padding on their sides. This saves you from any "box model math". Keep in mind, if you add any side padding or border to the div itself, it will be added to the width you define to create the *total* width. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design.
+
+2) No margin has been given to the columns since they are all floated. If you must add margin, avoid placing it on the side you're floating toward (for example: a right margin on a div set to float right). Many times, padding can be used instead. For divs where this rule must be broken, you should add a "display:inline" declaration to the div's rule to tame a bug where some versions of Internet Explorer double the margin.
+
+3) Since classes can be used multiple times in a document (and an element can also have multiple classes applied), the columns have been assigned class names instead of IDs. For example, two sidebar divs could be stacked if necessary. These can very easily be changed to IDs if that's your preference, as long as you'll only be using them once per document.
+
+4) If you prefer your nav on the right instead of the left, simply float these columns the opposite direction (all right instead of all left) and they'll render in reverse order. There's no need to move the divs around in the HTML source.
+
+*/
+.sidebar1 {
+	float: left;
+	width: 180px;
+	background: #FFFFFF;
+	padding-bottom: 10px;
+}
+.upperbar {
+	float: up;
+	background: #FFFFFF;
+	padding-bottom: 10px;
+}
+.content {
+	padding: 10px 0;
+	width: 780px;
+	float: left;
+	color: #000;
+	font-family: Tahoma;
+	letter-spacing: normal;
+	line-height: 2;
+	font: tahoma;
+}
+
+/* ~~ This grouped selector gives the lists in the .content area space ~~ */
+.content ul, .content ol { 
+	padding: 0 15px 15px 40px; /* this padding mirrors the right padding in the headings and paragraph rule above. Padding was placed on the bottom for space between other elements on the lists and on the left to create the indention. These may be adjusted as you wish. */
+}
+
+/* ~~ The navigation list styles (can be removed if you choose to use a premade flyout menu like Spry) ~~ */
+ul.nav {
+	list-style: none; /* this removes the list marker */
+	border-top: 1px solid #ffffff; /* this creates the top border for the links - all others are placed using a bottom border on the LI */
+	margin-bottom: 15px;
+	font-size: 10px;
+}
+ul.nav li {
+	border-bottom: 1px solid #ffffff; /* this creates the button separation */
+    }
+
+ul.nav a, ul.nav a:visited { /* grouping these selectors makes sure that your links retain their button look even after being visited */
+	padding: 5px 5px 5px 15px;
+	display: block; /* this gives the link block properties causing it to fill the whole LI containing it. This causes the entire area to react to a mouse click. */
+	width: 160px;  /*this width makes the entire button clickable for IE6. If you don't need to support IE6, it can be removed. Calculate the proper width by subtracting the padding on this link from the width of your sidebar container. */
+	text-decoration: none;
+	background: #FFFFFF;
+}
+ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background and text color for both mouse and keyboard navigators */
+	background: #ADB96E;
+	color: #FFF;
+}
+
+/* ~~ The footer ~~ */
+.footer {
+	padding: 10px 0;
+	background: #FFFFFF;
+	position: relative;/* this gives IE6 hasLayout to properly clear */
+	clear: both; /* this clear property forces the .container to understand where the columns end and contain them */
+}
+
+/* ~~ miscellaneous float/clear classes ~~ */
+.fltrt {  /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* this class can be used to float an element left in your page. The floated element must precede the element it should be next to on the page. */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* this class can be placed on a <br /> or empty div as the final element following the last floated div (within the #container) if the #footer is removed or taken out of the #container */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+.container .content h3 span font strong {
+	font-weight: bold;
+}
+ li { 
+display: inline; 
+padding: 20px; 
+}
+.main {
+	font-size: 10px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #000;
+	
+}
+.container .content h5 {
+	font-family: Tahoma;
+	font-size: 10px;
+	font-style: normal;
+}
+-->
+</style></head>
+
+<body>
+
+<div class="container">
+  <div class="header"><a href="#"><img src="images/hedder1.jpg" alt="Insert Logo Here" name="Insert_logo" width="960" height="45" id="Insert_logo" style="background: #C6D580; display:block; background-color: #FFFFFF; text-align: center;" /></a> 
+    <!-- end .header --></div>
+  <div class="sidebar1">
+    <ul class="nav">
+    
+        
+    
+      <li><a href="aboutus.html">About us</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="graduates.html">Graduate students</a></li>
+      <li><a href="diving.html">Diving</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="donate.html">Donate</a></li>
+      <li><a href="contactus.html">Contact us</a></li>
+    </ul>
+    <p><!-- end .sidebar1 --><img src="images/britle.jpg" name="slide" width=102 height=65 id="slide" /></p>
+    <script type="text/javascript">
+
+//variable that will increment through the images
+var step=0
+
+function slideit(){
+ //if browser does not support the image object, exit.
+ if (!document.images)
+  return
+ document.getElementById('slide').src = slideimages[step].src
+ if (step<2)
+  step++
+ else
+  step=0
+ //call function "slideit()" every 2.5 seconds
+ setTimeout("slideit()",2500)
+}
+
+slideit()
+
+</script>
+  </div>
+  <div class="content">
+    <p><span style="text-align: center;"><font style="color: rgb(17, 40, 64); font-family: Verdana; font-size: 12pt; font-style: normal; font-variant: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px;"><strong> &nbsp; </span></p>
+ <div class="main">   
+    <p align="left">The Deep Med esearch Group (Established 2009)<br />
+      <br />
+      Marine Biology in the Eastern Mediterranean<br />
+      <br />
+       Head of the DEEPMED: Dr.<a href="http://deepmed.haifa.ac.il/Dan_Tchernov.htm" name="#Dan Tchernov" title="Dan Tchernov" id="#Dan Tchernov" >Dan Tchernov <br />
+      <br />
+    </a>Lab manager:<a href="http://deepmed.haifa.ac.il/Dan_Tchernov.htm" name="#Dan Tchernov" title="Dan Tchernov" > Dr.<span class="Apple-converted-space">&nbsp;</span><a href="http://deepmed.haifa.ac.il/Eli.htm" name="#Eli Shemesh" title="Eli Shemesh" id="#Eli Shemesh" style="text-decoration: underline; color: purple;">Eli Shemesh<span class="Apple-converted-space">&nbsp;</span></a></p>
+    </div>
+    <h5>Main Topics</h5>
+<h5> Physiology of Photosynthesis Ecology and biodivesity of the deep Levantine basin Deep benthos microbiology and biogeochemistry Masophotic reefs  Global change - ocean acidification and coral bleaching Paleobiology </h5>
+    <h5> MIssion</h5>
+    <h6 align="justify">Long and short-term environmental changes affect and modify complex biological systems on a multitude of levels. From a strictly anthropocentric standpoint the understanding of such processes can assist in perceiving the current changes our ecosystems are undergoing. Our own habitat has entered an unfamiliar zone in terms of global carbon biogeochemical cycles, as atmospheric CO2 levels rose for the first time in 620,000 years above 280 ppmv.  These changes are bound to have significant effects on the global climate as the deviation from the glacial interglacial steady state  increases. I have chosen to study two systems, corals and marine phytoplankton, which may assist in elucidating complex systems reactions  to environmental shifts.  My choice to study these systems was due to their evident responses to environmental changes and their abundance throughout the  geological record, thus providing contemporary physiologically measurable subjects that can be manipulated in the laboratory or tested in-situ. Additionally, these two systems leave behind skeletons that are harboring possible markers that can uncover past climatic events. Both systems have a substantial fossil record that can help unravel the evolutionary changes that occurred following these events. Yet another benefit arises from investigating these two systems simultaneously; a better understanding of the physiology of phytoplankton increases the chance of correctly interpreting data from the much more complex coral symbiosis. During the past five years my lab is going through a drastic change as we moved from the warm and tranquil setting of the Red sea to the  Mediterranean front. Here, we are facing a staggering enigma that I set my mind on tackling: what are the basic mechanisms that cause the immense shift of fauna and flora over the past forty years. Why the diversity split between deeper methane supported systems and shallow waters? What is the part of man in all these rapid changes?  And ever since, we are amerced in totally new worlds that include investigating the biodiversity of the eastern basin, step by step, trying to get a handle on the structure and functions of this ecosystem and establishing a baseline for future research to come.</h6>
+    <h6> Our overarching research aspiration is to enhance our understanding of thefundamental effects that global climatic changes has on the marine environment.  Some of the current processes in the Mediterranean sea are intriguing and we are looking into the source of the massive shift in the fauna and flora that is ongoing for almost four decades. </h6>
+    <h6>Still a long way to go:</h6>
+    <h6> &quot;<em> The woods are lovely, dark and deep  But I have promises to keep,  And miles to go before I sleep,  And miles to go before I sleep.</em> &quot;</h6>
+    <h6> Robert frost </h6>
+    <h3>&nbsp;</h3>
+  <!-- end .content --></div>
+  
+  <div class="footer">
+    <p><a href="#"><img src="images/hedder3.jpg" alt="Insert Logo Here" name="Insert_logo" width="943" height="45" border="0" usemap="#Insert_logoMap" id="Insert_logo" style="background: #C6D580; display:block; background-color: #FFFFFF; text-align: center;" />
+        <map name="Insert_logoMap" id="Insert_logoMap"><area shape="rect" coords="405,0,475,45" href="http://marsci.haifa.ac.il/en/academics/marine-biology" target="_new" alt="haifa" />
+          <area shape="rect" coords="0,2,70,47" href="http://www.haifa.ac.il/index.php/en/" target="_new" alt="haifa" />
+          <area shape="rect" coords="764,5,904,42" href="http://sbmmed.haifa.ac.il/" target="_new" alt="sbm" />
+        </map>
+    </a> </p>
+  <!-- end .footer --></div>
+<!-- end .container --></div>
+</body>
+</html>
