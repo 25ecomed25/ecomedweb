@@ -1,0 +1,150 @@
+/* Global Styles */
+
+body {
+	margin:0px;
+	}
+	
+td {
+	color:#603;
+	font-family: Arial;
+	font-size: 9px;
+	font-style: normal;
+	}
+	
+a {
+	color: #993300;
+	}
+	
+a:hover {
+	color: #5C743D;
+	}
+
+/* ID Styles */
+
+#navigation td {
+	border-bottom: 1px solid #F4FFE4;
+	}
+	
+#navigation a {
+	font: bold 11px Arial, Helvetica, sans-serif;
+	color: #D5EDB3;
+	line-height:16px;
+	letter-spacing:.1em;
+	text-decoration: none;
+	display:block;
+	padding:8px 6px 10px 20px;
+	}
+	
+#navigation a:hover {
+	background: #99CC66;
+	color:#993300;
+	}
+	
+#logo 	{
+	color: #5C743D;
+	letter-spacing:.2em;
+	line-height:normal;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	}
+
+#tagline 	{	
+	font:11px Arial, Helvetica, sans-serif;
+	color: #993300;
+	letter-spacing:.4em;
+	line-height:18px;
+	}
+
+#monthformat {
+	border-bottom: 1px dashed #5C743D;
+	}
+		
+#dateformat {
+	font:11px Arial, Helvetica, sans-serif;
+	color: #993300;
+	letter-spacing:.2em;
+	}
+	
+#dateformat a {
+	font:11px Arial, Helvetica, sans-serif;
+	color: #993300;
+	font-weight:bold;
+	letter-spacing:.1em;
+	text-decoration:none;
+	}
+	
+#dateformat a:hover {
+	color: #F4FFE4;
+	letter-spacing:.1em;
+	}
+	
+/* Class Styles */
+	
+.bodyText {
+	color:#096;
+	line-height:20px;
+	margin-top:0px;
+	font-size: 12px;
+	}
+	
+.pageName{
+	font: 18px Arial, Helvetica, sans-serif;
+	color: #99CC66;
+	line-height:26px;
+	letter-spacing:.21em;
+	}
+	
+.subHeader {
+	color: #993300;
+	line-height:22px;
+	letter-spacing:.2em;
+	font-family: Arial;
+	font-size: 11px;
+	font-weight: bold;
+	}
+
+.quote {
+	font: 20px Arial, Helvetica, sans-serif;
+	color: #759DA1;
+	line-height:30px;
+	}
+	
+.smallText {
+	color: #666666;
+	line-height: 22px;
+	font-family: Arial;
+	font-size: 10px;
+	}
+	
+.navText {
+	font: 11px Arial, Helvetica, sans-serif;
+	color: #003366;
+	line-height:16px;
+	letter-spacing:.1em;
+	text-decoration: none;
+	}
+	
+#navigation {
+	font-size: 9;
+}
+#navigation tr .bodyText {
+	font-size: 9px;
+}
+#navigation tr .bodyText {
+}
+#navigation tr .bodyText {
+	font-size: 9px;
+}
+#navigation tr .bodyText {
+	color: #9F9;
+}
+#navigation tr .bodyText {
+	font-size: 9px;
+}
+#navigation tr .bodyText {
+	color: #9F9;
+}
+.bodyText p strong em {
+	font-family: "Arial Black", Gadget, sans-serif;
+	color: #999;
+}
